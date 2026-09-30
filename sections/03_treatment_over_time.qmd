@@ -1,0 +1,19 @@
+
+
+## Effect of Treatment Over Time
+
+### The Data
+
+#### Measured Variables
+
+### The Analysis
+
+#### Does the Treatment Have an Effect?
+
+#### What Comparison Are We Making?
+
+#### Parametric or Non-Parametric?
+
+#### Which Graph Illustrates the Effect?
+
+#### Thesis-Style Results Sentence

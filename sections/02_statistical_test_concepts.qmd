@@ -1,0 +1,27 @@
+
+
+# Statistical Tests: Comparison of Medians (or Means?)
+
+## Make Clear What Is a Statistical Test, and When to Use It
+
+### Mean and Median
+
+### Variance and Standard Deviation
+
+### Normal Distribution
+
+### Statistical Test
+
+### When to Use a Statistical Test
+
+### Parametric and Non-Parametric Tests
+
+### Assumptions of Parametric Tests
+
+### Assumptions of Non-Parametric Tests
+
+### p-value
+
+### Risk of Error When Using a Statistical Test
+
+### Paired and Unpaired Tests

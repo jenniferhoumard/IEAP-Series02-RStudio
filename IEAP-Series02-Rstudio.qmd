@@ -1,0 +1,53 @@
+---
+title: "IEAP Series 02 RStudio"
+subtitle: "Statistical Tests"
+author:
+  - "Jennifer Houmard"
+  - "Jeanne Le Roux"
+  - "Jiangbin Long"
+date: "5 October 2026"
+
+number-sections: true
+toc: true
+toc-depth: 3
+toc-indent: 2.5em
+
+format:
+  typst:
+    papersize: a4
+    margin:
+      x: 1.2cm
+      y: 1.2cm
+      
+    include-before-body:
+      - text: |
+          #show heading.where(level: 2): it => pad(left: 0.3cm, it)
+          #show heading.where(level: 3): it => pad(left: 0.7cm, it)
+          #show heading.where(level: 4): it => pad(left: 1.1cm, it)
+---
+
+# Group Repository {.unnumbered}
+
+[GitHub Repository](https://github.com/jenniferhoumard/IEAP-Series02-RStudio)
+
+{{< include sections/01_git_workflow.qmd >}}
+
+{{< include sections/09_challenges_lessons.qmd >}}
+
+{{< include sections/02_statistical_test_concepts.qmd >}}
+
+{{< include sections/03_treatment_over_time.qmd >}}
+
+{{< include sections/04_snorers_fatter.qmd >}}
+
+{{< include sections/05_snorers_drink_smoke.qmd >}}
+
+{{< include sections/06_men_fatter.qmd >}}
+
+{{< include sections/07_women_smoke_less.qmd >}}
+
+{{< include sections/08_variable_correlations.qmd >}}
+
+{{< include sections/10_sources_references.qmd >}}
+
+{{< include sections/11_checklist.qmd >}}
