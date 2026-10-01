@@ -1,14 +1,60 @@
-
-
 ### Are Men Fatter?
 
-```{r sex-bmi}
-ggplot(snore, aes(x = sex, y = bmi, fill = sex)) +
-  geom_boxplot() + theme_minimal()
+We can compare BMI between men and women. The distribution of BMI between men and women are first analysed using a box-plot before statistical analyses is performed.
 
-shapiro.test(snore$bmi[snore$sex == "H"])
-shapiro.test(snore$bmi[snore$sex == "F"])
-wilcox.test(bmi ~ sex, data = snore)
+$BMI_{men}$ vs $BMI_{women}$
+
+```{r}
+# 1. Make a boxplot to compare BMI between men and women
+
+ggplot(snore, aes(x = sex, y = BMI)) +
+  geom_boxplot() +
+  labs(title = "BMI of Men and Women", x = "Sex", y = "BMI (kg/m²)") +
+  theme_minimal()
 ```
 
-A Wilcoxon rank-sum test showed no significant difference in BMI between men and women (W = 850, p = 0.488), so this stereotype is not supported by the data.
+```{r}
+# 2. Create a table to look at the descriptive statistics
+
+snore %>%
+  group_by(sex) %>%
+  summarise(mean_BMI = mean(BMI), median_BMI = median(BMI), sd_BMI = sd(BMI), n = n())
+```
+
+Descriptive results suggest that men have a slightly higher BMI than women, but the difference looks small. The median BMI was 28.08 kg/m² for men and 27.73 kg/m² for women, while the mean BMI was 27.27 and 27.04 kg/m², respectively.
+
+- Women (`F`): mean BMI = **27.04**, median = **27.73**, SD = **2.72**, (n=25)
+
+- Men (`H`): mean BMI = **27.27**, median = **28.08**, SD = **2.85**, (n=75)
+
+Check the normality of the data using the Shapiro-Wilk test
+
+```{r}
+
+# 3. Check normality of BMI in both groups using the Shapiro-Wilk test
+
+# a) Women
+shapiro.test(snore$BMI[snore$sex == "F"])
+
+# b) Men
+shapiro.test(snore$BMI[snore$sex == "H"])
+```
+
+BMI was not normally distributed in either women or men (Shapiro–Wilk tests, both p \< 0.05). Therefore, a non-parametric test was used to compare BMI between the two independent groups.
+
+- Men: $p = 1.154e-05 < 0.05$
+
+- Women: $p = 3.456e-09 < 0.05$
+
+```{r}
+
+# 4. Run the Wilcoxon rank-sum test on BMI
+
+wilcox.test(BMI ~ sex, data = snore)
+```
+
+No statistically significant difference in BMI between men and women.
+
+- $p = 0.488 > 0.05$
+
+Men had a slightly higher median BMI than women (28.08 vs 27.73 kg/m²), but the difference was not statistically significant (Wilcoxon rank-sum test, W = 850, p = 0.488). Therefore, the data do not support the stereotype that men are fatter.
