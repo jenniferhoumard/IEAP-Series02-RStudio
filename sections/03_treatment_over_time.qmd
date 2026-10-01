@@ -1,71 +1,148 @@
-
-
 ## Effect of Treatment Over Time
 
 This dataset investigates whether the non-use of the proximal upper limb (PANU) is related to the non-use of two of its component joints: the shoulder (SANU) and the elbow (EENU). Non-use refers to the extent to which a patient avoids using a joint or limb segment during daily activities, typically measured in clinical settings after neurological injury (e.g., stroke). Each variable is expressed as a percentage, where higher values indicate greater non-use. The question is whether limiting the use of a single joint (shoulder or elbow) is associated with limiting the use of the whole arm (PANU).
 
-### The Data
+### a). Import data
 
+```{r}
 
-```{r load-data}
-library(tidyverse)
-nonuse <- read.csv("../data/NonUse copy.csv")
-summary(nonuse)
+# 1.Import the data
+  
+  prepost <- read_csv("../data/PrePost copy.csv")
+  
+  # View the first 6 rows to make sure it was imported correctly 
+  head(prepost)
+
 ```
 
-#### Measured Variables
+### b). Check the structure of the data
 
-| variable | description | unit | range |
-|----------|-------------|------|-------|
-| EENU | non use of the elbow extension | percentage | [0%..100%] |
-| SANU | non use of shoulder flexion/antepulsion | percentage | [0%..100%] |
-| PANU | non use of proximal arm joint (shoulder and elbow) | percentage | [0%..100%] |
+8 measurements before rehabilitation and 8 after:
 
-### The Analysis
-
-#### Does the Treatment Have an Effect?
-
-Yes: performance is higher after the treatment (see the tests below).
-
-#### What Comparison Are We Making?
-
-We compare the performance of the same patients before and after the treatment, so this is a **paired** comparison. The data contain no subject identifier, so we assume that the row order keeps the Before/After pairing (8 patients, 2 measurements each).
-
-
-#### Parametric or Non-Parametric?
-
-The paired t-test assumes that the differences are normally distributed. We check this with a Shapiro-Wilk test.
-
-```{r prepost-test}
-prepost <- read_csv("../data/PrePost copy.csv")
-
-prepost <- prepost %>%
-  mutate(subject = rep(1:8, times = 2),
-         time = factor(time, levels = c("Before", "After")))
-
-before <- prepost$perf[prepost$time == "Before"]
-after  <- prepost$perf[prepost$time == "After"]
-diff   <- after - before
-
-shapiro.test(diff)
-t.test(before, after, paired = TRUE)
-wilcox.test(before, after, paired = TRUE)
+```         
+Before: 125 130 132 135 136 138 140 145
+After:  127 132 133 136 139 141 145 148
 ```
 
+```{r}
 
-Shapiro-Wilk gives p = 0.283 (> 0.05), so the differences are compatible with a normal distribution. The **paired t-test** (parametric) is therefore appropriate. The Wilcoxon test (non-parametric) gives the same conclusion (p = 0.014).
+# Display the variable names
+names(prepost)
 
-#### Which Graph Illustrates the Effect?
-A line for each patient, linking the Before and After values, shows the change for every individual.
+# Check the structure and data types
+str(prepost)
 
-```{r prepost-plot}
-ggplot(prepost, aes(x = time, y = perf, group = subject)) +
-  geom_line(color = "grey60") +
-  geom_point(size = 2, color = "steelblue") +
-  theme_minimal() +
-  labs(title = "Performance before/after rehabilitation", x = "", y = "Performance")
+# Obtain a first summary of the values
+summary(prepost)
 ```
 
-#### Thesis-Style Results Sentence
+### c). Variables of the dataset
 
-A paired t-test showed a significant increase in performance after the rehabilitation treatment (mean increase = 2.5 points, 95% CI [1.41, 3.59], t(7) = -5.40, p = 0.001), indicating that the treatment had a positive effect.
+| **Variable** | **Description** | **Unit** | **Possible Values** | **Expected Change** |
+|:--------------|:--------------|:--------------|:--------------|:--------------|
+| `perf` | Performance measurement taken before and after cardiac rehabilitation | Not specified | Numerical values; observed in this dataset from 125 to 148 | Expected to increase if a higher performance score represents better physical capacity |
+| `time` | Indicates whether the performance measurement was taken before or after rehabilitation | None | `Before`, `After` | Not applicable; this is the measurement occasion |
+
+### d). Data analysis
+
+Q: Does the rehabilitation treatment have an effect on measured performance from before to after treatment?
+
+**a) What comparison are we making?**
+
+- performance before rehabilitation vs performance after rehabilitation
+
+  - Before: 125 130 132 135 136 138 140 145
+  - After: 127 132 133 136 139 141 145 148
+
+- If the same 8 participants are being compared before and after then this is a paired comparison
+
+**b) Parametric or non-parametric test?**
+
+- For a paired test, what matters is the distribution of the differences:
+  - $difference = After - Before$
+  - The differences are \[2 2 1 1 3 3 5 3\]
+- Check that the differences are normally distributed using a `Shapiro-Wilk normality test`.
+  - If $p > 0.05$ = not statistically significant and there is not enough evidence to say the differences depart from normality (we do not reject normality) $\rightarrow$ **`parametric test`** $\rightarrow$ `paired t-test`
+  - If $p < 0.05$ = statistically signifcant and there is enough evidence to say the differences are not normally distributed (we reject normality) $\rightarrow$ **`non-parametric test`** $\rightarrow$ **`Wilcoxon signed-rank test`**.
+  - For this dataset $p = 0.283 > 0.05$ therefore the data is normally distributed and a parametric paired t-test can be used for statistical analysis since the data are paired.
+- The `paired t-test` gives $p = 0.001 < 0.05$ $\rightarrow$ there is a statistically significant difference between performance before and after rehabilitation.
+
+```{r}
+# 1. Calculate the differences between before and after in the dataset
+
+# a) Separate the before and after performance values
+before <- prepost %>% filter(time == "Before") %>% pull(perf) 
+# only keep rows where time == "Before" and extract the perf column 
+
+after <- prepost %>% filter(time == "After") %>% pull(perf)
+# only keep rows where time == "After" and extract the perf column 
+
+# b) Calculate the difference for each participant
+difference <- after - before
+
+difference
+
+```
+
+```{r}
+# 2. Check for normality of data using Shapiro-Wilk normality test
+
+shapiro.test(difference)
+
+```
+
+```{r}
+# 3. Paired t-test comparing performance before and after rehabilitation
+t.test(after, before, paired = TRUE)
+```
+
+**c) Which graph illustrates the effect of rehabilitation treatment?**
+
+Since this is paired data, use a paired line plot to best show the effect of rehabilitation treatment on each participant.
+
+```{r}
+
+# 1. Reorganize data structure so each participant has a id (number 1-8)
+
+# a). Add a new column to dataset: participant IDs to label each participant 
+prepost_id <- prepost %>% mutate(id = rep(1:8, 2), time = factor(time, levels = c("Before", "After")))  # give participants a # 1-8 and repeat twice. Before comes first and after comes second.
+ 
+
+# 2. Create the paired line plot
+ggplot(prepost_id, aes(x = time, y = perf, group = id, color = factor(id))) + 
+  #color = factor(id) → converts numbers to categorical data to label each person with a colour
+  # group = id → connect the correct person's points
+  
+  geom_line() +
+  geom_point() +
+  labs(title = "Performance Before and After Rehabilitation", 
+       x = "Time", y = "Performance", color = "Participant") + # create legend labeled participant
+  theme_minimal()
+
+
+```
+
+**d) Rehabilitation treatment interpretation**
+
+Mean performance increased after rehabilitation compared with before. The slightly larger standard deviation after rehabilitation indicates that participant performance values were slightly more spread out around the mean.
+
+- **Before rehabilitation:** `135.1 ± 6.2` = mean ± standard deviation
+
+- **After rehabilitation:** `137.6 ± 7.0` = mean ± standard deviation
+
+  - Smaller SD = participants values are more similar to each other
+
+  - Larger SD = participant values are more spread out.
+
+```{r}
+
+# 1. Calculate the mean & SD before rehabilitation
+
+mean(before)
+sd(before)
+
+# 2. Calculate the mean & SD after rehabilitation
+
+mean(after)
+sd(after)
+```
