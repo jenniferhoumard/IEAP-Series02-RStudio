@@ -28,6 +28,9 @@ Yes: performance is higher after the treatment (see the tests below).
 
 #### What Comparison Are We Making?
 
+We compare the performance of the same patients before and after the treatment, so this is a **paired** comparison. The data contain no subject identifier, so we assume that the row order keeps the Before/After pairing (8 patients, 2 measurements each).
+
+
 #### Parametric or Non-Parametric?
 
 #### Which Graph Illustrates the Effect?
