@@ -1,3 +1,13 @@
 
 
 ## Challenges Encountered and Lessons Learned
+
+1. The logic and efficiency of the Git tree 
+Paradigm shift: The main challenge was to move from a "linear" mode of thinking (saving a final version file) to a "parallel" work logic. We had to understand that a branch is an isolated universe that allows us to experiment without affecting the rest of the group.
+Rigor of orders for everyone: Efficiency is based on a strict discipline: always come back on hand, pull the latest updates (git pull), then create its new branch (git checkout -b). Missing this step leads to complex merger conflicts.
+Naming and scope: We hesitated to do only 3 branches but for clarity’s sake, so in the end we chose to restrict each branch to a specific task rather than mixing everything up. This requires great clarity on what we are about to do even before typing the first line of code.
+2. "Zero errors" and the security of collaborative work
+The fear of "breaking" the main project: Working on a common repository generates pressure, with the impression that there is no right to make mistakes or else they could destroy others’ work.
+Pull Request as security: The learning was to understand that Git is precisely designed for error. The Pull Request is not a simple validation, it’s a discussion area. As long as the green "Merge" button is not clicked, nothing is broken.
+3. Anticipation of data and continuous adaptation (The organizational challenge)
+Deal with the unexpected along the way. We made the mistake of forgetting the data file. Having to add files or variables while the drafting of the first section was already underway shows the difficulty in anticipating statistical needs at the start of the project.

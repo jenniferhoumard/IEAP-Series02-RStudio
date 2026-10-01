@@ -1,5 +1,98 @@
-
-
 ## Testing Some Stereotypes
 
 ### Are Snorers Fatter?
+
+#### a) Import Data
+
+```{r}
+
+library(tidyverse)
+
+# 1.Import the data
+
+snore <- read_delim("../data/snore copy.csv") # delim seperates the columns correctly 
+
+# View the first 6 rows to make sure it was imported correctly 
+head(snore)
+```
+
+#### b) Chosen Comparison Variable
+
+The BMI of snorers and non-snores can be compared to gives us a measure of body mass relative to height, so it is more appropriate than simply asking whether snorers weigh more.
+
+$BMI_{snorers}$ vs $BMI_{non-snoreres}$
+
+$BMI = \frac{weight(kg)}{height (m)^2}$
+
+```{r}
+
+# 1. Create BMI variable: create a new column BMI with the height m 
+snore <- snore %>% mutate(BMI = weight / (height / 100)^2) # mutate adds a new column BMI 
+
+head(snore)
+
+```
+
+#### c) Descriptive Analysis
+
+```{r}
+# 2. # Visualize BMI distribution: boxplot before deciding the type of statistical test
+
+ggplot(snore, aes(x = snore, y = BMI)) +
+  geom_boxplot() +
+  labs(title = "BMI of Snorers and Non-Snorers", x = "Snoring", y = "BMI (kg/m²)") +
+  theme_minimal()
+```
+
+```{r}
+
+# 3. Descriptive statistics table
+snore %>% group_by(snore) %>%
+  summarise(mean_BMI = mean(BMI), median_BMI = median(BMI), sd_BMI = sd(BMI), n = n())
+```
+
+Both groups are extremely similar and the boxplot also shows a very similar distribution and spread in both groups. Therefore descriptively, there is no obvious evidence that snorers have a higher BMI.
+
+- Non-snorers (`N`): mean BMI = 27.27, median = 28.07, SD = 2.81, (n=65)
+
+- Snorers (`O`): mean BMI = 27.11, median = 28.08, SD = 2.83, (n=35)
+
+These are **unpaired/independent groups**, because the snorers and non-snorers are different people.
+
+Before deciding the type of statistical test: check to see if BMI is normally distributed in each group using the Shapiro-Wilk test.
+
+#### d) Statistical Test Selection
+
+```{r}
+# 4. Check the normality of BMI in both groups using Shapiro-Wilk test.
+
+# a) Check normality of BMI for non-snorers
+shapiro.test(snore$BMI[snore$snore == "N"]) # take the BMI column only for the rows where snore = no 
+
+# b) Check normality of BMI for snorers
+shapiro.test(snore$BMI[snore$snore == "O"]) # take the BMI column only for the rows where snore = yes
+
+```
+
+BMI is not normally distributed in either group. Both are much smaller than (0.05), so we reject the assumption of normality for both groups:
+
+- $BMI_{snoreres}$ $\rightarrow$ $p = 2.323e-08 < 0.05$
+
+- $BMI_{non-snoreres}$ $\rightarrow$ $p = 2.323e9.81-07 < 0.05$
+
+Since the two groups are independent and the data are non-normal, the `Wilcoxon rank-sum test` (also called the `Mann–Whitney U test`) was chosen. This tests whether the BMI distributions differ between snorers and non-snorers.
+
+#### e) Statistical Comparison
+
+```{r}
+
+# 5. Run the Wilcoxon rank-sum test on BMI 
+
+wilcox.test(BMI ~ snore, data = snore)
+```
+
+$p = 0.951 > 0.05$ $\rightarrow$ there is no statistically significant difference in BMI between snorers and non-snorers. The BMI distributions of snorers and non-snorers are not meaningfully different in this sample.
+
+#### f) Conclusion
+
+BMI was similar between snorers and non-snorers, with median values of 28.08 and 28.07 kg/m², respectively. The difference was not statistically significant (Wilcoxon rank-sum test, W = 1128.5, p = 0.951), providing no evidence to support the stereotype that snorers are fatter.

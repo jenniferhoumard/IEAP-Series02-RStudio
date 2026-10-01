@@ -1,3 +1,92 @@
 
-
 ### Are There Any Correlations Between Variables?
+
+8.From a more general perspective: are there any correlations between variables?**
+
+We are no longer comparing two groups. We want to see whether the numerical variables tend to change together.
+
+- **`Numerical variables`:** age, weight, height, alcohol
+
+- **`Categorical variables`:** snore, gender, smoking
+
+Categorical data should not be put in a standard correlation matrix since they are not numerical quantities. Based on the previous analysis above, some numerical variables were not normally distributed, therefore `Spearman correlation` can be used to see whether two variables generally increase or decrease together. Spearman is used instead of Pearson because Spearman does not require normality.
+
+1.  A dataset must be created for only the numerical variables.
+2.  The Spearman correlation matrix is calculated.
+3.  The interesting correlations are then tested to see if they are statistically significant or not.
+
+```{r}
+# 1. Select the numerical variables for the correlation analysis
+
+snore_numeric <- snore %>%
+  select(age, weight, height, alcool)
+
+head(snore_numeric)
+```
+
+```{r}
+# 2. Calculate Spearman correlations between all numerical variables
+
+correlation_matrix <- cor(snore_numeric, method = "spearman", use = "complete.obs")
+
+correlation_matrix
+```
+
+The main relationship is between weight and height. It is a very strong positive correlation. Taller participants generally tend to weigh more. All other correlations were weak or close to zero.
+
+- $r_s = 0.930$
+
+- `1.0` = variables are perfectly correlated with each other
+
+Now the correlation between wweight and height can be tested to see whether it is test statistically significant or not. `Spearman correlation` is used to test the significance. Spearman correlation was used because some numerical variables were not normally distributed as mentioned previously, making a non-parametric correlation more appropriate.
+
+```{r}
+# 3. Test the correlation between height and weight
+
+cor.test(snore$height, snore$weight, method = "spearman")
+```
+
+There is a very strong positive and statistically significant association between height and weight: as height increases, weight generally increases as well. $r_s = 0.930$
+
+- $p < 2.2e-16$
+
+```{r}
+# 4. Visualize the relationship between height and weight
+
+ggplot(snore, aes(x = height, y = weight)) +
+  geom_point() +
+  labs(title = "Relationship Between Height and Weight", x = "Height", y = "Weight") +
+  theme_minimal()
+```
+
+Height and weight showed a very strong positive correlation ($r_s = 0.930, p = 2.2e-16$), indicating that taller participants generally had greater body weight. The other numerical variables showed only weak or negligible correlations.
+
+## **Beyond the scope**
+
+The statistical methods used in this assignment included:
+
+| **Methods** | \*\*Description\* |
+|:-----------------------------------|:-----------------------------------|
+| Descriptive statistics | Summarized the data using mean, median, SD, percentages, etc. |
+| Boxplots / scatterplots | Visualized distributions and relationships |
+| Paired t-test | Compared two related measurements, such as before and after, when the differences were approximately normally distributed |
+| Wilcoxon rank-sum test | Compared two independent groups when data were non-normal |
+| Chi-square test | Tested relationships between categorical variables |
+| Spearman correlation | Tested whether two numerical variables were related when the data were non-normally distributed |
+
+The more advanced methods mentioned in the epilogue are different because they can work with several variables at the same time:
+
+| **More advanced methods** | **What they could do** |
+|:-----------------------------------|:-----------------------------------|
+| Linear regression | Use several variables to predict a numerical value |
+| Logistic regression | Use several variables to predict a category/probability, such as snorer vs non-snorer |
+| Clustering | Automatically find groups of similar individuals |
+| PCA | Combine many related variables into fewer variables to simplify the dataset |
+
+- So far, the analysis has mainly used basic statistical methods to compare variables or study relationships between them, such as t-tests, Wilcoxon tests, Chi-square tests and correlations.
+
+- More advanced data-mining methods could go further by analysing several variables at the same time. For example, age, weight, height, alcohol consumption, sex and smoking status could potentially be combined using logistic regression to predict whether a person snores. Linear regression could be used when the variable being predicted is numerical instead of categorical.
+
+- Other methods can be used for different purposes. Clustering could identify groups of people with similar characteristics without defining the groups beforehand, while PCA could simplify a dataset containing many related variables by reducing them to a smaller number of combined variables.
+
+- These methods could reveal patterns that are difficult to see when variables are studied separately. However, the research question should always come first, because finding a statistical pattern does not automatically mean that the pattern is useful or meaningful.
