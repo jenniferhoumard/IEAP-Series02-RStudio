@@ -1,3 +1,26 @@
 
-
 ### Are There Any Correlations Between Variables?
+
+8.From a more general perspective: are there any correlations between variables?**
+
+We are no longer comparing two groups. We want to see whether the numerical variables tend to change together.
+
+- **`Numerical variables`:** age, weight, height, alcohol
+
+- **`Categorical variables`:** snore, gender, smoking
+
+Categorical data should not be put in a standard correlation matrix since they are not numerical quantities. Based on the previous analysis above, some numerical variables were not normally distributed, therefore `Spearman correlation` can be used to see whether two variables generally increase or decrease together. Spearman is used instead of Pearson because Spearman does not require normality.
+
+1.  A dataset must be created for only the numerical variables.
+2.  The Spearman correlation matrix is calculated.
+3.  The interesting correlations are then tested to see if they are statistically significant or not.
+
+```{r}
+# 1. Select the numerical variables for the correlation analysis
+
+snore_numeric <- snore %>%
+  select(age, weight, height, alcool)
+
+head(snore_numeric)
+```
+
