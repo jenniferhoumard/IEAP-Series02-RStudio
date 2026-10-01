@@ -24,6 +24,8 @@ summary(nonuse)
 
 #### Does the Treatment Have an Effect?
 
+Yes: performance is higher after the treatment (see the tests below).
+
 #### What Comparison Are We Making?
 
 #### Parametric or Non-Parametric?
