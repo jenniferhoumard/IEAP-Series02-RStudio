@@ -53,7 +53,6 @@ wilcox.test(before, after, paired = TRUE)
 Shapiro-Wilk gives p = 0.283 (> 0.05), so the differences are compatible with a normal distribution. The **paired t-test** (parametric) is therefore appropriate. The Wilcoxon test (non-parametric) gives the same conclusion (p = 0.014).
 
 #### Which Graph Illustrates the Effect?
-
 A line for each patient, linking the Before and After values, shows the change for every individual.
 
 ```{r prepost-plot}
