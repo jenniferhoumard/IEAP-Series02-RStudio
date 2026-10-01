@@ -96,4 +96,14 @@ The descriptive statistics suggest that snorers do not smoke more in this sample
 
 Because both variables are categorical data (`O/N`), a `Chi-square test of independence` instead of a parametric or non-parametric test since the data is categorical and both groups are independent:
 
+```{r}
+# 3. Test whether smoking status is associated with snoring status
+
+chisq.test(smoke_table)
+
+```
+
+No statistically significant association between smoking status and snoring status. Descriptively, snorers actually smoked less often in this sample (57.1% vs 67.7%)., but the Chi-square test shows that this difference is not statistically significant ($\chi^2(1)=0.689, p=0.407$), so the data do not support the stereotype that snorers smoke more.
+
+$p=0.407>0.05$
 
