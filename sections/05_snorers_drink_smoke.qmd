@@ -2,7 +2,7 @@
 
 ### Do Snorers Drink or Smoke More?
 
- **Do snorers drink more?**
+1. **Do snorers drink more?**
 
 Alcohol consumption of snorers and non-snorers can be compared to determine whether snorers have higher alcohol consumption. Analyze the distribution of alcohol consumption before statistical analyses
 
@@ -58,4 +58,42 @@ This result is statistically significant, meaning there is a difference between 
 $p = 0.008594 < 0.05$
 
 Snorers had higher alcohol consumption than non-snorers, with median values of 4 and 0, respectively. This difference was statistically significant (Wilcoxon rank-sum test, W = 788, p = 0.009), supporting the stereotype that snorers drink more.
+
+2.  **Do snorers smoke more?**
+
+Alcohol consumption of smokers and non-smokers can be compared to determine whether smokers have higher alcohol consumption. Analyze the proportion of smokers between snorers and non-snorers and since smoking and alcohol is categorical (`O`/`N`) data, therefore a histogram was plotted rather than a box-pot.
+
+$Smoker_{non-snorer}$ vs $Smoker_{snorer}$
+
+```{r}
+# 1. Compare smoking distribution between snorers and non-snorers
+
+ggplot(snore, aes(x = snore, fill = tabac)) +
+  geom_bar(position = "fill") +
+  labs(title = "Smoking Status of Snorers and Non-Snorers", x = "Snoring", y = "Proportion",      fill = "Smoking") +
+  theme_minimal()
+```
+
+```{r}
+# 2. Create a contingency table
+
+smoke_table <- table(snore$snore, snore$tabac)
+
+# a). Calculate proportions within each snoring group
+
+prop.table(smoke_table, margin = 1) # Calculate the percentages within each row, each row adds up to 100% 
+
+# b). Convert the proportions to %
+
+prop.table(smoke_table, margin = 1) * 100
+```
+
+The descriptive statistics suggest that snorers do not smoke more in this sample. About 57.1% of snorers were smokers compared with 67.7% of non-snorers, so the proportion of smokers was actually lower among snorers.
+
+- Among non-snorers, 32.31% are non-smokers and 67.69% are smokers
+
+- Among snorers, 42.86% are non-smokers and 57.14% are smokers
+
+Because both variables are categorical data (`O/N`), a `Chi-square test of independence` instead of a parametric or non-parametric test since the data is categorical and both groups are independent:
+
 
