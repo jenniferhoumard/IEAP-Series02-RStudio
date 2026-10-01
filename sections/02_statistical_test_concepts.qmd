@@ -2,6 +2,8 @@
 
 ## Make Clear What Is a Statistical Test, and When to Use It
 
+Reference: Vu, J., & Harrington, D. (2020). *Introductory statistics for the life and biomedical sciences* (1st ed.). OpenIntro. [biostat statistics textbook](https://1drv.ms/b/c/e002ca8c8522705b/IQBV-YZ48EdOR4CDjGYRw5cAASO4MgXNelHfJSpdsDT3GpI?e=gp5aNh)
+
 ### Mean and Median
 
 | Concept | Definition & Reference |
