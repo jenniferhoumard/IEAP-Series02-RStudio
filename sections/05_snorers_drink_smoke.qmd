@@ -30,3 +30,32 @@ Snorers appear to consume more alcohol than non-snorers. Snorers had a higher me
 
 - Snorers (`O`): mean alcohol = 4.03, median = 4, SD = 3.47
 
+```{r}
+# 3. Check the normality of alcohol consumption in both groups using the Shapiro-Wilk test
+
+# a) Check normality for non-snorers
+shapiro.test(snore$alcool[snore$snore == "N"])
+
+# b) Check normality for snorers
+shapiro.test(snore$alcool[snore$snore == "O"])
+```
+
+Alcohol consumption was not normally distributed in either snorers or non-snorers (Shapiro–Wilk tests, both p \< 0.05). Therefore, a non-parametric test was used to compare the two unpaired/independent groups.
+
+$Alcohol_{snoreres}$ $\rightarrow$ $p = 6.818e-09 < 0.05$
+
+$Alcohol_{non-snoreres}$ $\rightarrow$ $p = 0.005032 < 0.05$
+
+```{r}
+# 4. Run the Wilcoxon rank-sum test on alcohol consumption
+
+wilcox.test(alcool ~ snore, data = snore)
+```
+
+
+This result is statistically significant, meaning there is a difference between the two groups.
+
+$p = 0.008594 < 0.05$
+
+Snorers had higher alcohol consumption than non-snorers, with median values of 4 and 0, respectively. This difference was statistically significant (Wilcoxon rank-sum test, W = 788, p = 0.009), supporting the stereotype that snorers drink more.
+
