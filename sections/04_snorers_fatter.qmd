@@ -81,3 +81,18 @@ $BMI_{snoreres}$ $\rightarrow$ $p = 2.323e-08 < 0.05$
 $BMI_{non-snoreres}$ $\rightarrow$ $p = 2.323e9.81-07 < 0.05$
 
 Since the two groups are independent and the data are non-normal, use the `Wilcoxon rank-sum test` (also called the `Mann–Whitney U test`). This tests whether the BMI distributions differ between snorers and non-snorers.
+
+#### e) Statistical Comparison
+
+```{r}
+
+# 5. Run the Wilcoxon rank-sum test on BMI 
+
+wilcox.test(BMI ~ snore, data = snore)
+```
+
+$p = 0.951 > 0.05$ $\rightarrow$ there is no statistically significant difference in BMI between snorers and non-snorers. The BMI distributions of snorers and non-snorers are not meaningfully different in this sample.
+
+#### f) Conclusion
+
+BMI was similar between snorers and non-snorers, with median values of 28.08 and 28.07 kg/m², respectively. The difference was not statistically significant (Wilcoxon rank-sum test, W = 1128.5, p = 0.951), providing no evidence to support the stereotype that snorers are fatter.
