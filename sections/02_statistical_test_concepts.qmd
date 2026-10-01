@@ -6,6 +6,9 @@
 
 ### Mean and Median
 
+| **Mean** | The sum of all values divided by the total number of values. Ch. 1, 1.4.1 *Measures of center: mean and median*, p. **30** |
+| **Median** | The middle value when the observations are ordered from smallest to largest. Ch. 1, 1.4.1 *Measures of center: mean and median*, p. **30** |
+
 ### Variance and Standard Deviation
 
 ### Normal Distribution
