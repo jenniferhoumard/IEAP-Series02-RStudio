@@ -11,9 +11,16 @@
 
 ### Variance and Standard Deviation
 
+| **Variance** | A measure of how spread out the values are around the mean. A large variance means the values are more spread out. Ch. 1, 1.4.2 *Measures of spread*, p. **31** |
+| **Standard deviation** | Square root of the variance. Another measure of spread. How far values tend to be from the mean, in the same units as the data. Ch. 1, 1.4.2 *Measures of spread*, p. **31** |
+
 ### Normal Distribution
 
+
+
 ### Statistical Test
+
+
 
 ### When to Use a Statistical Test
 
