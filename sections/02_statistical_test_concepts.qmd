@@ -45,4 +45,8 @@
 
 ### Risk of Error When Using a Statistical Test
 
+| **Risk of Error When Using a Statistical Test** | When performing a statistical test, we evaluate a sample to draw conclusions about a population. Because we rely on probabilities, there is always a risk of making an incorrect decision regarding the null hypothesis |
+
 ### Paired and Unpaired Tests
+
+
