@@ -8,7 +8,7 @@
 
 # 1.Import the data
 
-library(readr)
+library(tidyverse)
 
 snore <- read_delim("../data/snore copy.csv") # delim seperates the columns correctly 
 
@@ -53,4 +53,31 @@ snore %>% group_by(snore) %>%
 
 Both groups are extremely similar and the boxplot also shows a very similar distribution and spread in both groups. Therefore descriptively, there is no obvious evidence that snorers have a higher BMI.
 
+- Non-snorers (`N`): mean BMI = 27.27, median = 28.07, SD = 2.81, (n=65)
 
+- Snorers (`O`): mean BMI = 27.11, median = 28.08, SD = 2.83, (n=35)
+
+These are **unpaired/independent groups**, because the snorers and non-snorers are different people.
+
+Before deciding the type of statistical test: check to see if BMI is normally distributed in each group using the Shapiro-Wilk test.
+
+#### d) Statistical Test Selection
+
+```{r}
+# 4. Check the normality of BMI in both groups using Shapiro-Wilk test.
+
+# a) Check normality of BMI for non-snorers
+shapiro.test(snore$BMI[snore$snore == "N"]) # take the BMI column only for the rows where snore = no 
+
+# b) Check normality of BMI for snorers
+shapiro.test(snore$BMI[snore$snore == "O"]) # take the BMI column only for the rows where snore = yes
+
+```
+
+BMI is not normally distributed in either group. Both are much smaller than (0.05), so we reject the assumption of normality for both groups:
+
+$BMI_{snoreres}$ $\rightarrow$ $p = 2.323e-08 < 0.05$
+
+$BMI_{non-snoreres}$ $\rightarrow$ $p = 2.323e9.81-07 < 0.05$
+
+Since the two groups are independent and the data are non-normal, use the `Wilcoxon rank-sum test` (also called the `Mann–Whitney U test`). This tests whether the BMI distributions differ between snorers and non-snorers.
