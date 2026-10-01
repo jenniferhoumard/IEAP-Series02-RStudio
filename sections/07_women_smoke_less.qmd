@@ -1,3 +1,42 @@
 
 
 ### Do Women Smoke Less?
+
+#### a) Comparison Variables
+
+Both gender and `smoking` are categorical variables therefore the proportion of smokers among women and men must be compared.
+
+$Smokers_{men}$ vs $Smokers_{women}$
+
+#### b) Descriptive Analysis
+
+```{r}
+
+# 1. Make a proportional bar plot to compare smoking status between women and men
+
+ggplot(snore, aes(x = sex, fill = tabac)) +
+  geom_bar(position = "fill") +
+  labs(title = "Smoking Status of Women and Men", x = "Sex", y = "Proportion", 
+  fill = "Smoking") +
+  theme_minimal()
+```
+
+```{r}
+# 2. Create a contingency table for sex and smoking status
+
+sex_smoke_table <- table(snore$sex, snore$tabac)
+
+# a) Calculate proportions within each sex
+
+prop.table(sex_smoke_table, margin = 1)
+
+# b) Convert the proportions to percentages
+
+prop.table(sex_smoke_table, margin = 1) * 100
+```
+
+A lower proportion of women were smokers compared with men (40% vs 72%). Descriptively, this supports the stereotype that women smoke less.
+
+- **Women (`F`)**: 40% smokers, 60% non-smokers
+
+- **Men (`H`)**: 72% smokers, 28% non-smokers
