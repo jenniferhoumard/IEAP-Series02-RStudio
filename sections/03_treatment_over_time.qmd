@@ -6,11 +6,6 @@ This dataset investigates whether the non-use of the proximal upper limb (PANU) 
 
 ### The Data
 
-| variable | description | unit | range |
-|----------|-------------|------|-------|
-| EENU | non use of the elbow extension | percentage | [0%..100%] |
-| SANU | non use of shoulder flexion/antepulsion | percentage | [0%..100%] |
-| PANU | non use of proximal arm joint (shoulder and elbow) | percentage | [0%..100%] |
 
 ```{r load-data}
 nonuse <- read.csv("Data-20250923/NonUse.csv")
@@ -18,6 +13,12 @@ summary(nonuse)
 ```
 
 #### Measured Variables
+
+| variable | description | unit | range |
+|----------|-------------|------|-------|
+| EENU | non use of the elbow extension | percentage | [0%..100%] |
+| SANU | non use of shoulder flexion/antepulsion | percentage | [0%..100%] |
+| PANU | non use of proximal arm joint (shoulder and elbow) | percentage | [0%..100%] |
 
 ### The Analysis
 
