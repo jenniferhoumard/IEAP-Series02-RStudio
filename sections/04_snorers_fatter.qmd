@@ -1,9 +1,8 @@
-
-
 ## Testing Some Stereotypes
 
+### Are Snorers Fatter?
 
-### a). Import data
+#### a) Import data
 
 ```{r}
 
@@ -17,6 +16,41 @@ snore <- read_delim("../data/snore copy.csv") # delim seperates the columns corr
 head(snore)
 ```
 
+#### b) Comparison Variable
+
+The BMI of snorers and non-snores can be compared to gives us a measure of body mass relative to height, so it is more appropriate than simply asking whether snorers weigh more.
+
+$BMI_{snorers}$ vs $BMI_{non-snoreres}$
+
+$BMI = \frac{weight(kg)}{height (m)^2}$
+
+```{r}
+
+# 1. Create BMI variable: create a new column BMI with the height m 
+snore <- snore %>% mutate(BMI = weight / (height / 100)^2) # mutate adds a new column BMI 
+
+head(snore)
+
+```
+
+#### c) Descriptive Analysis
+
+```{r}
+# 2. # Visualize BMI distribution: boxplot before deciding the type of statistical test
+
+ggplot(snore, aes(x = snore, y = BMI)) +
+  geom_boxplot() +
+  labs(title = "BMI of Snorers and Non-Snorers", x = "Snoring", y = "BMI (kg/m²)") +
+  theme_minimal()
+```
+
+```{r}
+
+# 3. Descriptive statistics table
+snore %>% group_by(snore) %>%
+  summarise(mean_BMI = mean(BMI), median_BMI = median(BMI), sd_BMI = sd(BMI), n = n())
+```
+
+Both groups are extremely similar and the boxplot also shows a very similar distribution and spread in both groups. Therefore descriptively, there is no obvious evidence that snorers have a higher BMI.
 
 
-### Are Snorers Fatter?
