@@ -33,6 +33,25 @@ We compare the performance of the same patients before and after the treatment, 
 
 #### Parametric or Non-Parametric?
 
+The paired t-test assumes that the differences are normally distributed. We check this with a Shapiro-Wilk test.
+
+```{r prepost-test}
+prepost <- prepost %>%
+  mutate(subject = rep(1:8, times = 2),
+         time = factor(time, levels = c("Before", "After")))
+
+before <- prepost$perf[prepost$time == "Before"]
+after  <- prepost$perf[prepost$time == "After"]
+diff   <- after - before
+
+shapiro.test(diff)
+t.test(before, after, paired = TRUE)
+wilcox.test(before, after, paired = TRUE)
+```
+
+
+Shapiro-Wilk gives p = 0.283 (> 0.05), so the differences are compatible with a normal distribution. The **paired t-test** (parametric) is therefore appropriate. The Wilcoxon test (non-parametric) gives the same conclusion (p = 0.014).
+
 #### Which Graph Illustrates the Effect?
 
 #### Thesis-Style Results Sentence
