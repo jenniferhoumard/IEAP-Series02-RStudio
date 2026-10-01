@@ -8,8 +8,7 @@ This dataset investigates whether the non-use of the proximal upper limb (PANU) 
 
 
 ```{r load-data}
-library(dplyr)
-library(ggplot2)
+library(tidyverse)
 nonuse <- read.csv("../data/NonUse copy.csv")
 summary(nonuse)
 ```
