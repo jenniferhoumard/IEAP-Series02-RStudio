@@ -1,5 +1,11 @@
 
 
 # Data Sources
+Data Sources
+
+Field, A.(2013). Discovering Statistics Using IBM SPSS Statistics (4th ed.). Sage.
+Howell, D. C.(2012). Statistics Methods for Psychology(8th ed.). Cengage Learning.
+Vu, J., & Harrington, D. (2020). Introductory statistics for the life and biomedical sciences (1st ed.). OpenIntro.
 
 # Scientific References
+
