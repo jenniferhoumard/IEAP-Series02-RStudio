@@ -2,6 +2,8 @@
 
 ## Effect of Treatment Over Time
 
+This dataset investigates whether the non-use of the proximal upper limb (PANU) is related to the non-use of two of its component joints: the shoulder (SANU) and the elbow (EENU). Non-use refers to the extent to which a patient avoids using a joint or limb segment during daily activities, typically measured in clinical settings after neurological injury (e.g., stroke). Each variable is expressed as a percentage, where higher values indicate greater non-use. The question is whether limiting the use of a single joint (shoulder or elbow) is associated with limiting the use of the whole arm (PANU).
+
 ### The Data
 
 #### Measured Variables
