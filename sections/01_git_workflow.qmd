@@ -33,8 +33,22 @@ The branch structure and division of the sections were discussed as a group befo
 
 | Team Member | Assigned Sections |
 |---|---|
-| **Jennifer Houmard** | 01, 04, 07, 11 |
-| **Jeanne Le Roux** | 03, 06, 09 |
+| **Jennifer Houmard** | 01, 04, 07 |
+| **Jeanne Le Roux** | 03, 06, 09, 11 |
 | **Jiangbin Long** | 02, 05, 08, 10 |
 
+### Branch Workflow
 
+For each section, we used the same workflow:
+
+1. A branch was created from `main` for the section being worked on.
+2. The assigned student worked on the matching `.qmd` file.
+3. Several meaningful commits were made while completing the section.
+4. Once the section was finished, the branch was published to GitHub.
+5. A pull request was opened from the section branch into `main`.
+6. The pull request stayed open until the section was fully completed.
+7. After all sections were finished, the three team members reviewed all pull requests together.
+8. If something needed to be changed, comments were added and the section was corrected.
+9. Once everyone agreed that the section was complete, the pull request was merged into `main`.
+
+This workflow kept the `main` branch clean and ensured that only completed and reviewed sections were added to the final report.
