@@ -54,4 +54,14 @@ Shapiro-Wilk gives p = 0.283 (> 0.05), so the differences are compatible with a 
 
 #### Which Graph Illustrates the Effect?
 
+A line for each patient, linking the Before and After values, shows the change for every individual.
+
+```{r prepost-plot}
+ggplot(prepost, aes(x = time, y = perf, group = subject)) +
+  geom_line(color = "grey60") +
+  geom_point(size = 2, color = "steelblue") +
+  theme_minimal() +
+  labs(title = "Performance before/after rehabilitation", x = "", y = "Performance")
+```
+
 #### Thesis-Style Results Sentence
