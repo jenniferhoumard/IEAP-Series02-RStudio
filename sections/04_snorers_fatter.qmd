@@ -2,4 +2,18 @@
 
 ## Testing Some Stereotypes
 
+
+### a). Import data
+
+```{r}
+
+# 1.Import the data
+
+snore <- read_delim("data/snore.csv") # delim seperates the columns correctly 
+
+# View the first 6 rows to make sure it was imported correctly 
+head(snore)
+```
+
+
 ### Are Snorers Fatter?
