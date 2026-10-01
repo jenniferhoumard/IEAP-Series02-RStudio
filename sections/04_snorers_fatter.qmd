@@ -9,11 +9,14 @@
 
 # 1.Import the data
 
-snore <- read_delim("data/snore.csv") # delim seperates the columns correctly 
+library(readr)
+
+snore <- read_delim("../data/snore copy.csv") # delim seperates the columns correctly 
 
 # View the first 6 rows to make sure it was imported correctly 
 head(snore)
 ```
+
 
 
 ### Are Snorers Fatter?
