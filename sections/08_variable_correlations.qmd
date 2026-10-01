@@ -24,3 +24,40 @@ snore_numeric <- snore %>%
 head(snore_numeric)
 ```
 
+```{r}
+# 2. Calculate Spearman correlations between all numerical variables
+
+correlation_matrix <- cor(snore_numeric, method = "spearman", use = "complete.obs")
+
+correlation_matrix
+```
+
+The main relationship is between weight and height. It is a very strong positive correlation. Taller participants generally tend to weigh more. All other correlations were weak or close to zero.
+
+- $r_s = 0.930$
+
+- `1.0` = variables are perfectly correlated with each other
+
+Now the correlation between wweight and height can be tested to see whether it is test statistically significant or not. `Spearman correlation` is used to test the significance. Spearman correlation was used because some numerical variables were not normally distributed as mentioned previously, making a non-parametric correlation more appropriate.
+
+```{r}
+# 3. Test the correlation between height and weight
+
+cor.test(snore$height, snore$weight, method = "spearman")
+```
+
+There is a very strong positive and statistically significant association between height and weight: as height increases, weight generally increases as well. $r_s = 0.930$
+
+- $p < 2.2e-16$
+
+```{r}
+# 4. Visualize the relationship between height and weight
+
+ggplot(snore, aes(x = height, y = weight)) +
+  geom_point() +
+  labs(title = "Relationship Between Height and Weight", x = "Height", y = "Weight") +
+  theme_minimal()
+```
+
+Height and weight showed a very strong positive correlation ($r_s = 0.930, p = 2.2e-16$), indicating that taller participants generally had greater body weight. The other numerical variables showed only weak or negligible correlations.
+
