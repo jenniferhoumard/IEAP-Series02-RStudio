@@ -49,4 +49,5 @@
 
 ### Paired and Unpaired Tests
 
-
+| **Paired test** | Used when observations are related, such as measurements taken from the same participants before and after treatment. Ch. 5, 5.2 *Two-sample test for paired data*, pp. **244–246** |
+| **Unpaired test** | Used when the groups are independent, containing different observations or participants. Ch. 5, 5.3 *Two-sample test for independent data*, pp. **247–250** |
