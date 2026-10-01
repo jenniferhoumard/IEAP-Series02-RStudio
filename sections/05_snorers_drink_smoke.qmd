@@ -1,3 +1,32 @@
 
 
 ### Do Snorers Drink or Smoke More?
+
+ **Do snorers drink more?**
+
+Alcohol consumption of snorers and non-snorers can be compared to determine whether snorers have higher alcohol consumption. Analyze the distribution of alcohol consumption before statistical analyses
+
+$Alcohol_{snorers}$ vs $Alcohol_{non-snorers}$
+
+```{r}
+# 1. Make a boxplot to compare alcohol consumption between snorers and non-snorers
+ggplot(snore, aes(x = snore, y = alcool)) +
+  geom_boxplot() +
+  labs(title = "Alcohol Consumption of Snorers and Non-Snorers", x = "Snoring", y = "Alcohol") +
+  theme_minimal()
+```
+
+```{r}
+# 2. Create a table to look at the descriptive statistics
+
+snore %>%
+  group_by(snore) %>%
+  summarise(mean_alcool = mean(alcool), median_alcool = median(alcool), sd_alcool = sd(alcool),   n = n())
+```
+
+Snorers appear to consume more alcohol than non-snorers. Snorers had a higher mean alcohol consumption (4.03 vs 2.37) and a higher median (4 vs 0). The boxplot also shows generally higher alcohol values among snorers.
+
+- Non-snorers (`N`): mean alcohol = 2.37, median = 0, SD = 3.18
+
+- Snorers (`O`): mean alcohol = 4.03, median = 4, SD = 3.47
+
