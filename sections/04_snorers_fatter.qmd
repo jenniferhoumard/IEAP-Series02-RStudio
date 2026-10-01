@@ -2,13 +2,13 @@
 
 ### Are Snorers Fatter?
 
-#### a) Import data
+#### a) Import Data
 
 ```{r}
 
-# 1.Import the data
-
 library(tidyverse)
+
+# 1.Import the data
 
 snore <- read_delim("../data/snore copy.csv") # delim seperates the columns correctly 
 
@@ -16,7 +16,7 @@ snore <- read_delim("../data/snore copy.csv") # delim seperates the columns corr
 head(snore)
 ```
 
-#### b) Comparison Variable
+#### b) Chosen Comparison Variable
 
 The BMI of snorers and non-snores can be compared to gives us a measure of body mass relative to height, so it is more appropriate than simply asking whether snorers weigh more.
 
@@ -76,11 +76,11 @@ shapiro.test(snore$BMI[snore$snore == "O"]) # take the BMI column only for the r
 
 BMI is not normally distributed in either group. Both are much smaller than (0.05), so we reject the assumption of normality for both groups:
 
-$BMI_{snoreres}$ $\rightarrow$ $p = 2.323e-08 < 0.05$
+- $BMI_{snoreres}$ $\rightarrow$ $p = 2.323e-08 < 0.05$
 
-$BMI_{non-snoreres}$ $\rightarrow$ $p = 2.323e9.81-07 < 0.05$
+- $BMI_{non-snoreres}$ $\rightarrow$ $p = 2.323e9.81-07 < 0.05$
 
-Since the two groups are independent and the data are non-normal, use the `Wilcoxon rank-sum test` (also called the `Mann–Whitney U test`). This tests whether the BMI distributions differ between snorers and non-snorers.
+Since the two groups are independent and the data are non-normal, the `Wilcoxon rank-sum test` (also called the `Mann–Whitney U test`) was chosen. This tests whether the BMI distributions differ between snorers and non-snorers.
 
 #### e) Statistical Comparison
 
