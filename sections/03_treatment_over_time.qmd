@@ -65,3 +65,4 @@ ggplot(prepost, aes(x = time, y = perf, group = subject)) +
 ```
 
 #### Thesis-Style Results Sentence
+A paired t-test showed a significant increase in performance after the rehabilitation treatment (mean increase = 2.5 points, 95% CI [1.41, 3.59], t(7) = -5.40, p = 0.001), indicating that the treatment had a positive effect.
