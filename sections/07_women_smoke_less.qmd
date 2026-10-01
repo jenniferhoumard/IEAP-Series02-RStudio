@@ -62,3 +62,11 @@ sex_smoke_chi$expected
 ```
 The expected counts were sufficiently large, so the assumptions of the Chi-square test were considered satisfied.
 
+#### d) Conclusion
+
+There is significant association between sex and smoking status.
+
+- $p=0.008<0.05$
+
+A lower proportion of women were smokers compared with men (40% vs 72%). This difference was statistically significant ($\chi^2(1)=7.00, p=0.008$), supporting the stereotype that women smoke less in this sample.
+
