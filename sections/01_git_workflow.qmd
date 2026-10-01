@@ -26,3 +26,15 @@ We also used **11 Git branches**, with one branch corresponding to each section 
 | 09      | `09_challenges_lessons.qmd`        |
 | 10      | `10_sources_references.qmd`        |
 | 11      | `11_checklist.qmd`                 |
+
+## b) Task Distribution
+
+The branch structure and division of the sections were discussed as a group before starting the work. The sections were then distributed between the three team members so that everyone had clear responsibilities and could work independently on different files.
+
+| Team Member | Assigned Sections |
+|---|---|
+| **Jennifer Houmard** | 01, 04, 07, 11 |
+| **Jeanne Le Roux** | 03, 06, 09 |
+| **Jiangbin Long** | 02, 05, 08, 10 |
+
+
