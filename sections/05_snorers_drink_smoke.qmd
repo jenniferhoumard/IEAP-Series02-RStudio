@@ -1,10 +1,10 @@
-
-
 ### Do Snorers Drink or Smoke More?
 
-1. **Do snorers drink more?**
+The `snore` dataset is used to compare alcohol consumption and smoking status between snorers and non-snorers. Alcohol is analyzed as a numerical variable, while smoking status is analyzed as a categorical variable.
 
-Alcohol consumption of snorers and non-snorers can be compared to determine whether snorers have higher alcohol consumption. Analyze the distribution of alcohol consumption before statistical analyses
+**Do snorers drink more?**
+
+Alcohol consumption has previously been associated with snoring and sleep-disordered breathing (Burgos-Sanchez et al., 2020). Therefore, alcohol consumption of snorers and non-snorers can be compared to determine whether snorers have higher alcohol consumption. Analyze the distribution of alcohol consumption before statistical analyses
 
 $Alcohol_{snorers}$ vs $Alcohol_{non-snorers}$
 
@@ -19,8 +19,7 @@ ggplot(snore, aes(x = snore, y = alcool)) +
 ```{r}
 # 2. Create a table to look at the descriptive statistics
 
-snore %>%
-  group_by(snore) %>%
+snore %>% group_by(snore) %>%
   summarise(mean_alcool = mean(alcool), median_alcool = median(alcool), sd_alcool = sd(alcool),   n = n())
 ```
 
@@ -52,14 +51,13 @@ $Alcohol_{non-snoreres}$ $\rightarrow$ $p = 0.005032 < 0.05$
 wilcox.test(alcool ~ snore, data = snore)
 ```
 
-
 This result is statistically significant, meaning there is a difference between the two groups.
 
 $p = 0.008594 < 0.05$
 
 Snorers had higher alcohol consumption than non-snorers, with median values of 4 and 0, respectively. This difference was statistically significant (Wilcoxon rank-sum test, W = 788, p = 0.009), supporting the stereotype that snorers drink more.
 
-2.  **Do snorers smoke more?**
+**Do snorers smoke more?**
 
 Alcohol consumption of smokers and non-smokers can be compared to determine whether smokers have higher alcohol consumption. Analyze the proportion of smokers between snorers and non-snorers and since smoking and alcohol is categorical (`O`/`N`) data, therefore a histogram was plotted rather than a box-pot.
 
@@ -94,7 +92,7 @@ The descriptive statistics suggest that snorers do not smoke more in this sample
 
 - Among snorers, 42.86% are non-smokers and 57.14% are smokers
 
-Because both variables are categorical data (`O/N`), a `Chi-square test of independence` instead of a parametric or non-parametric test since the data is categorical and both groups are independent:
+Because both variables are categorical data (`O/N`), a `Chi-square test of independence` instead of a parametric or non-parametric test since the data is categorical and both groups are independent (Illowsky, 2023):
 
 ```{r}
 # 3. Test whether smoking status is associated with snoring status
@@ -106,4 +104,3 @@ chisq.test(smoke_table)
 No statistically significant association between smoking status and snoring status. Descriptively, snorers actually smoked less often in this sample (57.1% vs 67.7%)., but the Chi-square test shows that this difference is not statistically significant ($\chi^2(1)=0.689, p=0.407$), so the data do not support the stereotype that snorers smoke more.
 
 $p=0.407>0.05$
-

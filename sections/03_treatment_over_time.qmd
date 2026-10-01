@@ -1,21 +1,21 @@
 ## Effect of Treatment Over Time
 
-This dataset investigates whether the non-use of the proximal upper limb (PANU) is related to the non-use of two of its component joints: the shoulder (SANU) and the elbow (EENU). Non-use refers to the extent to which a patient avoids using a joint or limb segment during daily activities, typically measured in clinical settings after neurological injury (e.g., stroke). Each variable is expressed as a percentage, where higher values indicate greater non-use. The question is whether limiting the use of a single joint (shoulder or elbow) is associated with limiting the use of the whole arm (PANU).
+The `PrePost` dataset contains measurements taken before and after a treatment training. The same participants were measured at both time points, allowing us to examine whether the measured outcome changed after the treatment. Because the before and after measurements come from the same participants, the observations are paired.
 
-### a). Import data
+### Import data
 
 ```{r}
 
 # 1.Import the data
   
-  prepost <- read_csv("../data/PrePost copy.csv")
-  
+prepost <- read_csv("data/PrePost copy.csv")
+
   # View the first 6 rows to make sure it was imported correctly 
   head(prepost)
 
 ```
 
-### b). Check the structure of the data
+### Check the structure of the data
 
 8 measurements before rehabilitation and 8 after:
 
@@ -36,14 +36,14 @@ str(prepost)
 summary(prepost)
 ```
 
-### c). Variables of the dataset
+### Variables of the dataset
 
 | **Variable** | **Description** | **Unit** | **Possible Values** | **Expected Change** |
 |:--------------|:--------------|:--------------|:--------------|:--------------|
 | `perf` | Performance measurement taken before and after cardiac rehabilitation | Not specified | Numerical values; observed in this dataset from 125 to 148 | Expected to increase if a higher performance score represents better physical capacity |
 | `time` | Indicates whether the performance measurement was taken before or after rehabilitation | None | `Before`, `After` | Not applicable; this is the measurement occasion |
 
-### d). Data analysis
+### Data analysis
 
 Q: Does the rehabilitation treatment have an effect on measured performance from before to after treatment?
 
@@ -62,9 +62,9 @@ Q: Does the rehabilitation treatment have an effect on measured performance from
   - $difference = After - Before$
   - The differences are \[2 2 1 1 3 3 5 3\]
 - Check that the differences are normally distributed using a `Shapiro-Wilk normality test`.
-  - If $p > 0.05$ = not statistically significant and there is not enough evidence to say the differences depart from normality (we do not reject normality) $\rightarrow$ **`parametric test`** $\rightarrow$ `paired t-test`
-  - If $p < 0.05$ = statistically signifcant and there is enough evidence to say the differences are not normally distributed (we reject normality) $\rightarrow$ **`non-parametric test`** $\rightarrow$ **`Wilcoxon signed-rank test`**.
-  - For this dataset $p = 0.283 > 0.05$ therefore the data is normally distributed and a parametric paired t-test can be used for statistical analysis since the data are paired.
+  - If $p > 0.05$ = not statistically significant and there is not enough evidence to say the differences depart from normality (we do not reject normality) $\rightarrow$ **`parametric test`** $\rightarrow$ `paired t-test` (Kim, 2015).
+  - If $p < 0.05$ = statistically significant and there is enough evidence to say the differences are not normally distributed (we reject normality) $\rightarrow$ **`non-parametric test`** $\rightarrow$ **`Wilcoxon signed-rank test`** (Whitley & Ball, 2002).
+  - For this dataset $p = 0.283 > 0.05$ therefore the data is normally distributed and a parametric paired t-test can be used for statistical analysis since the data are paired (Kim, 2015).
 - The `paired t-test` gives $p = 0.001 < 0.05$ $\rightarrow$ there is a statistically significant difference between performance before and after rehabilitation.
 
 ```{r}
@@ -98,7 +98,7 @@ t.test(after, before, paired = TRUE)
 
 **c) Which graph illustrates the effect of rehabilitation treatment?**
 
-Since this is paired data, use a paired line plot to best show the effect of rehabilitation treatment on each participant.
+Since the same participants were measured before and after the rehabilitation treatment, a paired line plot was used. This type of graph connects each participant's before and after measurements, making it easy to see the direction and size of the change for each individual rather than only comparing the overall group averages.
 
 ```{r}
 

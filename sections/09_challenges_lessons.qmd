@@ -1,13 +1,33 @@
-
-
 ## Challenges Encountered and Lessons Learned
 
-1. The logic and efficiency of the Git tree 
-Paradigm shift: The main challenge was to move from a "linear" mode of thinking (saving a final version file) to a "parallel" work logic. We had to understand that a branch is an isolated universe that allows us to experiment without affecting the rest of the group.
-Rigor of orders for everyone: Efficiency is based on a strict discipline: always come back on hand, pull the latest updates (git pull), then create its new branch (git checkout -b). Missing this step leads to complex merger conflicts.
-Naming and scope: We hesitated to do only 3 branches but for clarity’s sake, so in the end we chose to restrict each branch to a specific task rather than mixing everything up. This requires great clarity on what we are about to do even before typing the first line of code.
-2. "Zero errors" and the security of collaborative work
-The fear of "breaking" the main project: Working on a common repository generates pressure, with the impression that there is no right to make mistakes or else they could destroy others’ work.
-Pull Request as security: The learning was to understand that Git is precisely designed for error. The Pull Request is not a simple validation, it’s a discussion area. As long as the green "Merge" button is not clicked, nothing is broken.
-3. Anticipation of data and continuous adaptation (The organizational challenge)
-Deal with the unexpected along the way. We made the mistake of forgetting the data file. Having to add files or variables while the drafting of the first section was already underway shows the difficulty in anticipating statistical needs at the start of the project.
+1.  **Adapting to a parallel Git workflow:**\
+    One of our main challenges was moving from a linear way of working, where one final version of a file is saved, to a parallel workflow where several people can work at the same time. We learned that branches allow each team member to work independently without affecting the work of others.
+
+    We also learned the importance of following a clear order: return to `main`, pull the latest changes, and then create a new branch. Skipping these steps can lead to merge conflicts. At first, we considered using only three branches, one per team member, but we decided that one branch per section was clearer and made it easier to track the work.
+
+2.  **Working safely in a shared repository:**\
+    At first, there was some concern about making mistakes and potentially affecting other team members' work. Through the project, we learned that Git is designed to manage these situations safely.
+
+    Pull requests were especially useful because they allowed us to review and discuss changes before merging them into `main`. If something was incorrect, it could be changed on the branch before affecting the final report. This made the collaborative workflow much safer and gave us more confidence when working in the shared repository.
+
+3.  **Protecting the `main` branch:**
+
+    To reduce the risk of accidental changes, we protected the `main` branch using GitHub branch rules. Direct merging into `main` was restricted, and pull requests required at least one approval before they could be merged.
+
+    We also enabled protection against accidental deletion of the main branch and required review comments to be resolved before merging. This meant that completed sections could not be added to the final report without first being reviewed by another team member.
+
+    This helped us keep `main` as a stable version of the project and reduced the risk of accidentally deleting or merging unfinished work.
+
+4.  **Planning the project and adapting to unexpected changes:**\
+    Another challenge was preparing all the shared files before the team started working on separate branches. Initially we forgot to add the data folder to the main GitHub repository, so the team had already started working on their section branches before the datasets were available.
+
+    The data folder then had to be added to `main` and pushed to GitHub. After this, each team member had to fetch the latest changes from `origin` in GitHub Desktop so that their local repository included the shared data files.
+
+    This showed us the importance of preparing the repository structure and shared files before creating working branches. It also helped us understand how changes made to `main` need to be synchronized with each team member's local repository during collaborative work.
+
+5.  **Managing R libraries across different sections:**\
+    Because each team member worked on separate section files, we initially loaded the required R libraries inside our own `.qmd` files. This worked while developing the sections independently, but once everything was combined into the final report, the same libraries were being loaded repeatedly.
+
+    We also noticed that some code only worked on the computer of the person who had already loaded the required packages in their R session. This caused problems when another team member tried to run or render the same section from a clean session.
+
+    To solve this, the common libraries were moved to a setup chunk in the master Quarto document. This allowed the packages to be loaded once at the beginning of the report instead of being repeated throughout multiple sections. It also made the final report more consistent and easier to reproduce.

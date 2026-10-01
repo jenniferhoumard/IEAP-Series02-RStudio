@@ -26,9 +26,13 @@ format:
           #show heading.where(level: 4): it => pad(left: 1.1cm, it)
 ---
 
+```{r setup}
+library(tidyverse)
+```
+
 # Group Repository {.unnumbered}
 
-[GitHub Repository](https://github.com/jenniferhoumard/IEAP-Series02-RStudio)
+GitHub Repository: <https://github.com/jenniferhoumard/IEAP-Series02-RStudio>
 
 {{< include sections/01_git_workflow.qmd >}}
 

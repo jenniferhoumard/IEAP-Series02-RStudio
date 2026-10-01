@@ -1,12 +1,14 @@
 ### Do Women Smoke Less?
 
-#### a) Comparison Variables
+The `snore` dataset is used to compare smoking status between women and men. Since both sex and smoking status are categorical variables, the analysis focuses on comparing the proportion of smokers in each group.
 
-Both `gender` and `smoking` are categorical variables, therefore, the proportion of smokers among women and men must be compared.
+#### Comparison Variables
+
+Both `sex` and `smoking` are categorical variables. Therefore, the proportion of smokers is compared between women and men.
 
 $Smokers_{men}$ vs $Smokers_{women}$
 
-#### b) Descriptive Analysis
+#### Descriptive Analysis
 
 ```{r}
 
@@ -39,13 +41,13 @@ A lower proportion of women were smokers compared with men (40% vs 72%). Descrip
 
 - **Men (`H`)**: 72% smokers, 28% non-smokers
 
-#### c) Statistical Test Selection
+#### Statistical Test Selection
 
 Both `sex` and `tabac` are categorical variables, and the observations are independent because each participant belongs to only one sex and one smoking-status category.
 
 A `Chi-square test` of independence can therefore be used to test whether smoking status is associated with sex.
 
-For the Chi-square test, the expected cell counts must be reasonably large. If the expected counts are all around 5 or more, the Chi-square test is appropriate.
+For the Chi-square test, the expected cell counts must be reasonably large. If the expected counts are all around 5 or more, the Chi-square test is appropriate (Illowsky, 2023).
 
 ```{r}
 # 3. Test whether smoking status is associated with sex
@@ -61,7 +63,7 @@ sex_smoke_chi$expected
 
 The expected counts were sufficiently large, so the assumptions of the Chi-square test were considered satisfied.
 
-#### d) Conclusion
+#### Conclusion
 
 There is significant association between sex and smoking status.
 

@@ -2,7 +2,7 @@
 
 ## Make Clear What Is a Statistical Test, and When to Use It
 
-Reference: Vu, J., & Harrington, D. (2020). *Introductory statistics for the life and biomedical sciences* (1st ed.). OpenIntro. [biostat statistics textbook](https://1drv.ms/b/c/e002ca8c8522705b/IQBV-YZ48EdOR4CDjGYRw5cAASO4MgXNelHfJSpdsDT3GpI?e=gp5aNh)
+Reference: `(Vu & Harrington, 2020)`
 
 ### Mean and Median
 
@@ -34,7 +34,7 @@ Reference: Vu, J., & Harrington, D. (2020). *Introductory statistics for the lif
 
 | Concept | Definition & Reference |
 |:-----------------------------------|:-----------------------------------|
-| **When to Use a Statistical Test** | used when we want to determine whether an observed difference/association in a sample provides sufficient evidence of a corresponding effect in the population, while accounting for sampling variability. |
+| **When to Use a Statistical Test** | used when we want to determine whether an observed difference/association in a sample provides sufficient evidence of a corresponding effect in the population, while accounting for sampling variability.  Ch. 4, 4.3 *Hypothesis testing*, p. **212-214** |
 
 ### Parametric and Non-Parametric Tests
 
@@ -47,13 +47,13 @@ Reference: Vu, J., & Harrington, D. (2020). *Introductory statistics for the lif
 
 | Concept | Definition & Reference |
 |:-----------------------------------|:-----------------------------------|
-| **Assumptions of Parametric Tests** | Assumptions: independent observations, a normal distribution and for some group comparisons, similar variances between groups. |
+| **Assumptions of Parametric Tests** | Assumptions: normally distributed data, independent observations, and for some group comparisons, similar variances between groups. Ch. 4, 4.3 *Hypothesis testing*, p. **212-214**. Ch. 5, pp. **238, 245, 248** |
 
 ### Assumptions of Non-Parametric Tests
 
 | Concept | Definition & Reference |
 |:-----------------------------------|:-----------------------------------|
-| **Assumptions of Non-Parametricc Tests** | Assumptions: Not normally distributed, appropriately measured data, independence of observations when comparing independent groups. |
+| **Assumptions of Non-Parametricc Tests** | Assumptions: Not normally distributed data, appropriately measured data, independence of observations when comparing independent groups. Ch. 4, 4.3 *Hypothesis testing*, p. **212-214**. Ch. 5, pp. **238, 245, 248** |
 
 ### p-value
 
@@ -65,7 +65,7 @@ Reference: Vu, J., & Harrington, D. (2020). *Introductory statistics for the lif
 
 | Concept | Definition & Reference |
 |:-----------------------------------|:-----------------------------------|
-| **Risk of Error When Using a Statistical Test** | When performing a statistical test, we evaluate a sample to draw conclusions about a population. Because we rely on probabilities, there is always a risk of making an incorrect decision regarding the null hypothesis |
+| **Risk of Error When Using a Statistical Test** | When performing a statistical test, we evaluate a sample to draw conclusions about a population. Because we rely on probabilities, there is always a risk of making an incorrect decision regarding the null hypothesis. **(**Ch. 4, 4.3.4 *Decision errors*, pp. **220–221)** |
 
 ### Paired and Unpaired Tests
 
