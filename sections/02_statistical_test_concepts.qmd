@@ -1,53 +1,73 @@
-
-
-# Statistical Tests: Comparison of Medians (or Means?)
+# Statistical Tests: Comparison of Medians or Means
 
 ## Make Clear What Is a Statistical Test, and When to Use It
 
 ### Mean and Median
 
+| Concept | Definition & Reference |
+|:-----------------------------------|:-----------------------------------|
 | **Mean** | The sum of all values divided by the total number of values. Ch. 1, 1.4.1 *Measures of center: mean and median*, p. **30** |
 | **Median** | The middle value when the observations are ordered from smallest to largest. Ch. 1, 1.4.1 *Measures of center: mean and median*, p. **30** |
 
 ### Variance and Standard Deviation
 
+| Concept | Definition & Reference |
+|:-----------------------------------|:-----------------------------------|
 | **Variance** | A measure of how spread out the values are around the mean. A large variance means the values are more spread out. Ch. 1, 1.4.2 *Measures of spread*, p. **31** |
 | **Standard deviation** | Square root of the variance. Another measure of spread. How far values tend to be from the mean, in the same units as the data. Ch. 1, 1.4.2 *Measures of spread*, p. **31** |
 
 ### Normal Distribution
 
+| Concept | Definition & Reference |
+|:-----------------------------------|:-----------------------------------|
 | **Normal distribution** | A symmetric, bell-shaped distribution where most values are close to the mean. A perfectly normal distribution, the mean, median, and mode are equal. Ch. 3, 3.3 *Normal distribution*, pp. **152–153** |
 
 ### Statistical Test
 
-| **Statistical test** | A method used to decide whether a difference or relationship in the sample is likely to be real or could just be due to random chance. usually starting with a null hypothesis (). used when we want to determine whether an observed difference/association in a sample provides sufficient evidence of a corresponding effect in the population, while accounting for sampling variability. Ch. 4, 4.3 *Hypothesis testing*, p. **212-214** | 
+| Concept | Definition & Reference |
+|:-----------------------------------|:-----------------------------------|
+| **Statistical test** | A method used to decide whether a difference or relationship in the sample is likely to be real or could just be due to random chance. usually starting with a null hypothesis (). used when we want to determine whether an observed difference/association in a sample provides sufficient evidence of a corresponding effect in the population, while accounting for sampling variability. Ch. 4, 4.3 *Hypothesis testing*, p. **212-214** |
 
 ### When to Use a Statistical Test
 
-| **When to Use a Statistical Test** | used when we want to determine whether an observed difference/association in a sample provides sufficient evidence of a corresponding effect in the population, while accounting for sampling variability.|
+| Concept | Definition & Reference |
+|:-----------------------------------|:-----------------------------------|
+| **When to Use a Statistical Test** | used when we want to determine whether an observed difference/association in a sample provides sufficient evidence of a corresponding effect in the population, while accounting for sampling variability. |
 
 ### Parametric and Non-Parametric Tests
 
-| **Parametric test** | A statistical test used for normally distributed data and makes more assumptions about the data.  Ch. 4, 4.3 *Hypothesis testing*, p. **212-214**. Ch. 5, pp. **238, 245, 248** |
-| **Non-parametric test** | A statistical test used for non-normally distributed data and makes fewer assumptions.  Ch. 4, 4.3 *Hypothesis testing*, p. **212-214**. Ch. 5, pp. **238, 245, 248** |
+| Concept | Definition & Reference |
+|:-----------------------------------|:-----------------------------------|
+| **Parametric test** | A statistical test used for normally distributed data and makes more assumptions about the data. Ch. 4, 4.3 *Hypothesis testing*, p. **212-214**. Ch. 5, pp. **238, 245, 248** |
+| **Non-parametric test** | A statistical test used for non-normally distributed data and makes fewer assumptions. Ch. 4, 4.3 *Hypothesis testing*, p. **212-214**. Ch. 5, pp. **238, 245, 248** |
 
 ### Assumptions of Parametric Tests
 
-| **Assumptions of Parametric Tests** | Assumptions: independent observations, a normal distribution and for some group comparisons, similar variances between groups.|
+| Concept | Definition & Reference |
+|:-----------------------------------|:-----------------------------------|
+| **Assumptions of Parametric Tests** | Assumptions: independent observations, a normal distribution and for some group comparisons, similar variances between groups. |
 
 ### Assumptions of Non-Parametric Tests
 
-| **Assumptions of Non-Parametricc Tests** | Assumptions: Not normally distributed, appropriately measured data, independence of observations when comparing independent groups.
+| Concept | Definition & Reference |
+|:-----------------------------------|:-----------------------------------|
+| **Assumptions of Non-Parametricc Tests** | Assumptions: Not normally distributed, appropriately measured data, independence of observations when comparing independent groups. |
 
 ### p-value
 
+| Concept | Definition & Reference |
+|:-----------------------------------|:-----------------------------------|
 | **p-value** | Tells us how unusual our result would be if there were actually no real effect or difference. A small p-value means the result would be unlikely under the null hypothesis. Ch. 4, 4.3.1, Step 4, p. **214** |
 
 ### Risk of Error When Using a Statistical Test
 
+| Concept | Definition & Reference |
+|:-----------------------------------|:-----------------------------------|
 | **Risk of Error When Using a Statistical Test** | When performing a statistical test, we evaluate a sample to draw conclusions about a population. Because we rely on probabilities, there is always a risk of making an incorrect decision regarding the null hypothesis |
 
 ### Paired and Unpaired Tests
 
+| Concept | Definition & Reference |
+|:-----------------------------------|:-----------------------------------|
 | **Paired test** | Used when observations are related, such as measurements taken from the same participants before and after treatment. Ch. 5, 5.2 *Two-sample test for paired data*, pp. **244–246** |
 | **Unpaired test** | Used when the groups are independent, containing different observations or participants. Ch. 5, 5.3 *Two-sample test for independent data*, pp. **247–250** |
