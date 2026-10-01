@@ -61,3 +61,32 @@ ggplot(snore, aes(x = height, y = weight)) +
 
 Height and weight showed a very strong positive correlation ($r_s = 0.930, p = 2.2e-16$), indicating that taller participants generally had greater body weight. The other numerical variables showed only weak or negligible correlations.
 
+## **Beyond the scope**
+
+The statistical methods used in this assignment included:
+
+| **Methods** | \*\*Description\* |
+|:-----------------------------------|:-----------------------------------|
+| Descriptive statistics | Summarized the data using mean, median, SD, percentages, etc. |
+| Boxplots / scatterplots | Visualized distributions and relationships |
+| Paired t-test | Compared two related measurements, such as before and after, when the differences were approximately normally distributed |
+| Wilcoxon rank-sum test | Compared two independent groups when data were non-normal |
+| Chi-square test | Tested relationships between categorical variables |
+| Spearman correlation | Tested whether two numerical variables were related when the data were non-normally distributed |
+
+The more advanced methods mentioned in the epilogue are different because they can work with several variables at the same time:
+
+| **More advanced methods** | **What they could do** |
+|:-----------------------------------|:-----------------------------------|
+| Linear regression | Use several variables to predict a numerical value |
+| Logistic regression | Use several variables to predict a category/probability, such as snorer vs non-snorer |
+| Clustering | Automatically find groups of similar individuals |
+| PCA | Combine many related variables into fewer variables to simplify the dataset |
+
+- So far, the analysis has mainly used basic statistical methods to compare variables or study relationships between them, such as t-tests, Wilcoxon tests, Chi-square tests and correlations.
+
+- More advanced data-mining methods could go further by analysing several variables at the same time. For example, age, weight, height, alcohol consumption, sex and smoking status could potentially be combined using logistic regression to predict whether a person snores. Linear regression could be used when the variable being predicted is numerical instead of categorical.
+
+- Other methods can be used for different purposes. Clustering could identify groups of people with similar characteristics without defining the groups beforehand, while PCA could simplify a dataset containing many related variables by reducing them to a smaller number of combined variables.
+
+- These methods could reveal patterns that are difficult to see when variables are studied separately. However, the research question should always come first, because finding a statistical pattern does not automatically mean that the pattern is useful or meaningful.
