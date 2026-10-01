@@ -37,6 +37,8 @@ We compare the performance of the same patients before and after the treatment, 
 The paired t-test assumes that the differences are normally distributed. We check this with a Shapiro-Wilk test.
 
 ```{r prepost-test}
+prepost <- read_csv("../data/PrePost copy.csv")
+
 prepost <- prepost %>%
   mutate(subject = rep(1:8, times = 2),
          time = factor(time, levels = c("Before", "After")))
