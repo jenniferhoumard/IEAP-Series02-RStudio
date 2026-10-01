@@ -16,7 +16,7 @@
 
 ### Normal Distribution
 
-
+| **Normal distribution** | A symmetric, bell-shaped distribution where most values are close to the mean. A perfectly normal distribution, the mean, median, and mode are equal. Ch. 3, 3.3 *Normal distribution*, pp. **152–153** |
 
 ### Statistical Test
 
