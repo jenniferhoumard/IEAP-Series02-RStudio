@@ -1,3 +1,14 @@
 
 
 ### Are Men Fatter?
+
+```{r sex-bmi}
+ggplot(snore, aes(x = sex, y = bmi, fill = sex)) +
+  geom_boxplot() + theme_minimal()
+
+shapiro.test(snore$bmi[snore$sex == "H"])
+shapiro.test(snore$bmi[snore$sex == "F"])
+wilcox.test(bmi ~ sex, data = snore)
+```
+
+A Wilcoxon rank-sum test showed no significant difference in BMI between men and women (W = 850, p = 0.488), so this stereotype is not supported by the data.
