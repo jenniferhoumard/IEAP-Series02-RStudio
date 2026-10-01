@@ -2,15 +2,15 @@
 
 ## a) Repository and Report Structure
 
-Jennifer created the shared public GitHub repository and prepared the initial structure of the project on the `main` branch before the group started working. This included the master Quarto document, the section files, and the general organization of the notebook.
+Jennifer created the shared public GitHub repository and set up the project structure on the `main` branch before the group started working. This included the master Quarto document, the section files, and the overall organization of the notebook.
 
-To allow all three team members to work at the same time while reducing the risk of merge conflicts, the report was divided into **11 separate Quarto sub-documents**. Each sub-document corresponds to one of the main headings or sections of the assignment that had to be completed. This made it easy to keep track of the work and clearly identify which part of the assignment was being developed.
+The report was divided into **11 separate Quarto sub-documents**. Each sub-document matched one of the main sections of the assignment, which made it easy to see what had to be completed and to keep track of the work.
 
-Before the analysis started, headings and subheadings were also created inside each section document. This gave each team member a clear structure to follow and made it clear what information, code, results, and conclusions had to be included in each section. It also ensured that all sub-documents would fit together consistently when included in the master Quarto document.
+Headings and subheadings were also added to each section document before the analysis started. This gave each team member a clear structure to follow and showed what information, code, results, and conclusions needed to be included.
 
-A master Quarto document includes all 11 sub-documents when the final report is rendered, allowing the sections to be developed separately but combined into one organized final report. A table of contents was also created in the master document so that the different sections and subsections could be found easily.
+All 11 section documents were included in one master Quarto document. This allowed everyone to work on separate files while still producing one organized final report. A table of contents was also added to the master document so that sections and subsections could be found easily.
 
-We also used **11 Git branches**, with one branch corresponding to each section document. The branch name matched the section file, making it easy to identify the purpose of each branch and follow the progress of the assignment.
+We also created **11 Git branches**, with one branch for each section document. The branch names matched the section files, making it easy to identify which part of the report was being worked on and to follow the progress of each section.
 
 
 | Section | File                               |
@@ -47,7 +47,7 @@ For each section, we used the same workflow:
 4. Once the section was finished, the branch was published to GitHub.
 5. A pull request was opened from the section branch into `main`.
 6. The pull request stayed open until the section was fully completed.
-7. After all sections were finished, the three team members reviewed all pull requests together.
+7. After all sections were finished, the three team members reviewed all pull requests together with a checklist defined together.
 8. If something needed to be changed, comments were added and the section was corrected.
 9. Once everyone agreed that the section was complete, the pull request was merged into `main`.
 
