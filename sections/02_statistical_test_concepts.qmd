@@ -28,11 +28,16 @@
 
 ### Parametric and Non-Parametric Tests
 
-| **Parametric test** | A statistical test used for normally distributed data and makes more assumptions about the data. Assumptions: independent observations, a normal distribution and for some group comparisons, similar variances between groups. Ch. 4, 4.3 *Hypothesis testing*, p. **212-214**. Ch. 5, pp. **238, 245, 248** |
+| **Parametric test** | A statistical test used for normally distributed data and makes more assumptions about the data.  Ch. 4, 4.3 *Hypothesis testing*, p. **212-214**. Ch. 5, pp. **238, 245, 248** |
+| **Non-parametric test** | A statistical test used for non-normally distributed data and makes fewer assumptions.  Ch. 4, 4.3 *Hypothesis testing*, p. **212-214**. Ch. 5, pp. **238, 245, 248** |
 
 ### Assumptions of Parametric Tests
 
+| **Assumptions of Parametric Tests** | Assumptions: independent observations, a normal distribution and for some group comparisons, similar variances between groups.|
+
 ### Assumptions of Non-Parametric Tests
+
+| **Assumptions of Non-Parametricc Tests** | Assumptions: Not normally distributed, appropriately measured data, independence of observations when comparing independent groups.
 
 ### p-value
 
