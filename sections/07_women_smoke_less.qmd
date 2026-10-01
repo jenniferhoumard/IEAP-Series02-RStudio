@@ -1,3 +1,70 @@
-
-
 ### Do Women Smoke Less?
+
+#### a) Comparison Variables
+
+Both `gender` and `smoking` are categorical variables, therefore, the proportion of smokers among women and men must be compared.
+
+$Smokers_{men}$ vs $Smokers_{women}$
+
+#### b) Descriptive Analysis
+
+```{r}
+
+# 1. Make a proportional bar plot to compare smoking status between women and men
+
+ggplot(snore, aes(x = sex, fill = tabac)) +
+  geom_bar(position = "fill") +
+  labs(title = "Smoking Status of Women and Men", x = "Sex", y = "Proportion", 
+  fill = "Smoking") +
+  theme_minimal()
+```
+
+```{r}
+# 2. Create a contingency table for sex and smoking status
+
+sex_smoke_table <- table(snore$sex, snore$tabac)
+
+# a) Calculate proportions within each sex
+
+prop.table(sex_smoke_table, margin = 1)
+
+# b) Convert the proportions to percentages
+
+prop.table(sex_smoke_table, margin = 1) * 100
+```
+
+A lower proportion of women were smokers compared with men (40% vs 72%). Descriptively, this supports the stereotype that women smoke less.
+
+- **Women (`F`)**: 40% smokers, 60% non-smokers
+
+- **Men (`H`)**: 72% smokers, 28% non-smokers
+
+#### c) Statistical Test Selection
+
+Both `sex` and `tabac` are categorical variables, and the observations are independent because each participant belongs to only one sex and one smoking-status category.
+
+A `Chi-square test` of independence can therefore be used to test whether smoking status is associated with sex.
+
+For the Chi-square test, the expected cell counts must be reasonably large. If the expected counts are all around 5 or more, the Chi-square test is appropriate.
+
+```{r}
+# 3. Test whether smoking status is associated with sex
+
+sex_smoke_chi <- chisq.test(sex_smoke_table)
+
+sex_smoke_chi
+
+# Check expected counts for the Chi-square test
+sex_smoke_chi$expected
+
+```
+
+The expected counts were sufficiently large, so the assumptions of the Chi-square test were considered satisfied.
+
+#### d) Conclusion
+
+There is significant association between sex and smoking status.
+
+- $p=0.008<0.05$
+
+A lower proportion of women were smokers compared with men (40% vs 72%). This difference was statistically significant ($\chi^2(1)=7.00, p=0.008$), supporting the stereotype that women smoke less in this sample.
