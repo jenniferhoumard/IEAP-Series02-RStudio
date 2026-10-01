@@ -1,7 +1,6 @@
 
 
 # Final Grading Checklist
-
 - [ ] Authors and date are included in the header
 - [ ] Public GitHub repository is linked
 - [ ] Team Git workflow strategy is explained
