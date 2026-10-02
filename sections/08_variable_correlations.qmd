@@ -1,7 +1,6 @@
-
 ### Are There Any Correlations Between Variables?
 
-8.From a more general perspective: are there any correlations between variables?**
+**From a more general perspective: are there any correlations between variables?**
 
 We are no longer comparing two groups. We want to see whether the numerical variables tend to change together.
 
@@ -9,7 +8,7 @@ We are no longer comparing two groups. We want to see whether the numerical vari
 
 - **`Categorical variables`:** snore, gender, smoking
 
-Categorical data should not be put in a standard correlation matrix since they are not numerical quantities. Based on the previous analysis above, some numerical variables were not normally distributed, therefore `Spearman correlation` can be used to see whether two variables generally increase or decrease together. Spearman is used instead of Pearson because Spearman does not require normality.
+Categorical data should not be put in a standard correlation matrix since they are not numerical quantities. Based on the previous analysis above, some numerical variables were not normally distributed, therefore `Spearman correlation` can be used to see whether two variables generally increase or decrease together (Schober et al., 2018). Spearman is used instead of Pearson because Spearman does not require normality (Schober et al., 2018).
 
 1.  A dataset must be created for only the numerical variables.
 2.  The Spearman correlation matrix is calculated.
@@ -18,8 +17,7 @@ Categorical data should not be put in a standard correlation matrix since they a
 ```{r}
 # 1. Select the numerical variables for the correlation analysis
 
-snore_numeric <- snore %>%
-  select(age, weight, height, alcool)
+snore_numeric <- snore %>% select(age, weight, height, alcool)
 
 head(snore_numeric)
 ```
@@ -38,12 +36,12 @@ The main relationship is between weight and height. It is a very strong positive
 
 - `1.0` = variables are perfectly correlated with each other
 
-Now the correlation between wweight and height can be tested to see whether it is test statistically significant or not. `Spearman correlation` is used to test the significance. Spearman correlation was used because some numerical variables were not normally distributed as mentioned previously, making a non-parametric correlation more appropriate.
+Now the correlation between wweight and height can be tested to see whether it is test statistically significant or not. `Spearman correlation` is used to test the significance. Spearman correlation was used because some numerical variables were not normally distributed as mentioned previously, making a non-parametric correlation more appropriate (Schober et al., 2018).
 
 ```{r}
 # 3. Test the correlation between height and weight
 
-cor.test(snore$height, snore$weight, method = "spearman")
+cor.test(snore$height, snore$weight, method = "spearman", exact = FALSE)
 ```
 
 There is a very strong positive and statistically significant association between height and weight: as height increases, weight generally increases as well. $r_s = 0.930$
@@ -65,14 +63,14 @@ Height and weight showed a very strong positive correlation ($r_s = 0.930, p = 2
 
 The statistical methods used in this assignment included:
 
-| **Methods** | \*\*Description\* |
+| **Methods** | **Description** |
 |:-----------------------------------|:-----------------------------------|
 | Descriptive statistics | Summarized the data using mean, median, SD, percentages, etc. |
 | Boxplots / scatterplots | Visualized distributions and relationships |
-| Paired t-test | Compared two related measurements, such as before and after, when the differences were approximately normally distributed |
-| Wilcoxon rank-sum test | Compared two independent groups when data were non-normal |
-| Chi-square test | Tested relationships between categorical variables |
-| Spearman correlation | Tested whether two numerical variables were related when the data were non-normally distributed |
+| Paired t-test | Compared two related measurements, such as before and after, when the differences were approximately normally distributed (Kim, 2015). |
+| Wilcoxon rank-sum test | Compared two independent groups when data were non-normal (Whitley & Ball, 2002) |
+| Chi-square test | Tested relationships between categorical variables (Illowsky, 2023) |
+| Spearman correlation | Tested whether two numerical variables were related when the data were non-normally distributed (Schober et al., 2018) |
 
 The more advanced methods mentioned in the epilogue are different because they can work with several variables at the same time:
 

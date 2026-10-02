@@ -1,6 +1,7 @@
-
-
 # Final Grading Checklist
+
+This checklist was used during the pull request review process and again during the final review of the complete assignment. It helped us check that each section met the required criteria before merging and that all submission requirements were completed before the final PDF was submitted.
+
 - [ ] Authors and date are included in the header
 - [ ] Public GitHub repository is linked
 - [ ] Team Git workflow strategy is explained

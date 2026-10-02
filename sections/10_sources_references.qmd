@@ -1,11 +1,8 @@
-
 # Data Sources
 
-Field, A.(2013). Discovering Statistics Using IBM SPSS Statistics (4th ed.). Sage.
+Illowsky, B., & Dean, S. (2023). *Introductory Statistics 2e*. OpenStax. <https://openstax.org/books/introductory-statistics-2e/pages/6-introduction>
 
-Howell, D. C.(2012). Statistics Methods for Psychology(8th ed.). Cengage Learning.
-
-Vu, J., & Harrington, D. (2020). Introductory statistics for the life and biomedical sciences (1st ed.). OpenIntro.
+Vu, J., & Harrington, D. (2020). Introductory statistics for the life and biomedical sciences (1st ed.). OpenIntro. [biostat statistics textbook](https://1drv.ms/b/c/e002ca8c8522705b/IQBV-YZ48EdOR4CDjGYRw5cAASO4MgXNelHfJSpdsDT3GpI?e=gp5aNh)
 
 # Scientific References
 

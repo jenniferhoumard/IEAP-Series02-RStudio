@@ -1,6 +1,8 @@
 ### Are Men Fatter?
 
-We can compare BMI between men and women. The distribution of BMI between men and women are first analysed using a box-plot before statistical analyses is performed.
+The `snore` dataset is also used to compare BMI between men and women. BMI is calculated from each participant's height and weight, and the two sex groups are treated as independent groups. The distribution of BMI is first examined before choosing the appropriate statistical test.
+
+A box plot is first used to compare the BMI distributions of men and women before performing the statistical analysis.
 
 $BMI_{men}$ vs $BMI_{women}$
 
@@ -27,7 +29,7 @@ Descriptive results suggest that men have a slightly higher BMI than women, but 
 
 - Men (`H`): mean BMI = **27.27**, median = **28.08**, SD = **2.85**, (n=75)
 
-Check the normality of the data using the Shapiro-Wilk test
+Check the normality of the data using the Shapiro-Wilk test (Ghasemi & Zahediasl, 2012)
 
 ```{r}
 
