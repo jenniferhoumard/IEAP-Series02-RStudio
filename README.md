@@ -52,7 +52,6 @@ IEAP-Series02-RStudio/
     ├── 09_challenges_lessons.qmd
     ├── 10_sources_references.qmd
     ├── 11_checklist.qmd
-    └── 12_final_report_fixes.qmd
 ```
 
 The **master `.qmd` file** assembles the report using Quarto `include` directives. Each topic is stored in a separate section file so team members can develop and review their work without editing the same document simultaneously. The master document controls the report title, authors, table of contents, numbering, and PDF formatting.
