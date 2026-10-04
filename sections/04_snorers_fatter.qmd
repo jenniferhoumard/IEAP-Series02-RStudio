@@ -8,8 +8,6 @@ The `snore` dataset contains information about participants including their heig
 
 ```{r}
 
-library(tidyverse)
-
 # 1.Import the data
 
 snore <- read_delim("data/snore copy.csv") # delim seperates the columns correctly 
