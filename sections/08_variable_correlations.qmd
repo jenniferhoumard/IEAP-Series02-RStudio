@@ -57,7 +57,7 @@ ggplot(snore, aes(x = height, y = weight)) +
   theme_minimal()
 ```
 
-Height and weight showed a very strong positive correlation ($r_s = 0.930, p = 2.2e-16$), indicating that taller participants generally had greater body weight. The other numerical variables showed only weak or negligible correlations.
+Height and weight showed a very strong positive correlation ($r_s = 0.930, p < 2.2e-16$), indicating that taller participants generally had greater body weight. The other numerical variables showed only weak or negligible correlations.
 
 ## **Beyond the scope**
 
