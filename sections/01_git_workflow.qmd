@@ -4,7 +4,7 @@
 
 Jennifer created the shared public GitHub repository and set up the project structure on the `main` branch before the group started working. This included the master Quarto document, the section files, and the overall organization of the notebook.
 
-The report was divided into **11 separate Quarto sub-documents**. Each sub-document matched one of the main sections of the assignment, which made it easy to see what had to be completed and to keep track of the work.
+The report was divided into **11 separate Quarto sub-documents** and 2 other branches to correct the others . Each sub-document matched one of the main sections of the assignment, which made it easy to see what had to be completed and to keep track of the work.
 
 Headings and subheadings were also added to each section document before the analysis started. This gave each team member a clear structure to follow and showed what information, code, results, and conclusions needed to be included.
 
