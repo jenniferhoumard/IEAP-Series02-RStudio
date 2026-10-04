@@ -41,9 +41,9 @@ shapiro.test(snore$alcool[snore$snore == "O"])
 
 Alcohol consumption was not normally distributed in either snorers or non-snorers (Shapiro–Wilk tests, both p \< 0.05). Therefore, a non-parametric test was used to compare the two unpaired/independent groups.
 
-$Alcohol_{snoreres}$ $\rightarrow$ $p = 6.818e-09 < 0.05$
+$Alcohol_{non-snorers}$ $\rightarrow$ $p = 6.818e-09 < 0.05$
 
-$Alcohol_{non-snoreres}$ $\rightarrow$ $p = 0.005032 < 0.05$
+$Alcohol_{snorers}$ $\rightarrow$ $p = 0.005032 < 0.05$
 
 ```{r}
 # 4. Run the Wilcoxon rank-sum test on alcohol consumption
