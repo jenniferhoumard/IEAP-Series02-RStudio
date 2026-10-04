@@ -44,9 +44,9 @@ shapiro.test(snore$BMI[snore$sex == "H"])
 
 BMI was not normally distributed in either women or men (Shapiro–Wilk tests, both p \< 0.05). Therefore, a non-parametric test was used to compare BMI between the two independent groups.
 
-- Men: $p = 1.154e-05 < 0.05$
+- Women: $p = 1.154e-05 < 0.05$
 
-- Women: $p = 3.456e-09 < 0.05$
+- Men: $p = 3.456e-09 < 0.05$
 
 ```{r}
 
