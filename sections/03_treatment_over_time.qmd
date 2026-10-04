@@ -64,7 +64,7 @@ Q: Does the rehabilitation treatment have an effect on measured performance from
 - Check that the differences are normally distributed using a `Shapiro-Wilk normality test`.
   - If $p > 0.05$ = not statistically significant and there is not enough evidence to say the differences depart from normality (we do not reject normality) $\rightarrow$ **`parametric test`** $\rightarrow$ `paired t-test` (Kim, 2015).
   - If $p < 0.05$ = statistically significant and there is enough evidence to say the differences are not normally distributed (we reject normality) $\rightarrow$ **`non-parametric test`** $\rightarrow$ **`Wilcoxon signed-rank test`** (Whitley & Ball, 2002).
-  - For this dataset $p = 0.283 > 0.05$ therefore the data is normally distributed and a parametric paired t-test can be used for statistical analysis since the data are paired (Kim, 2015).
+  - For this dataset $p = 0.283 > 0.05$ therefore we do not reject normality of the differences and a parametric paired t-test can be used for statistical analysis since the data are paired (Kim, 2015).
 - The `paired t-test` gives $p = 0.001 < 0.05$ $\rightarrow$ there is a statistically significant difference between performance before and after rehabilitation.
 
 ```{r}
