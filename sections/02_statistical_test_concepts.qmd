@@ -28,7 +28,7 @@ Reference: `(Vu & Harrington, 2020)`
 
 | Concept | Definition & Reference |
 |:-----------------------------------|:-----------------------------------|
-| **Statistical test** | A method used to decide whether a difference or relationship in the sample is likely to be real or could just be due to random chance. usually starting with a null hypothesis (\$H_0\$). used when we want to determine whether an observed difference/association in a sample provides sufficient evidence of a corresponding effect in the population, while accounting for sampling variability. Ch. 4, 4.3 *Hypothesis testing*, p. **212-214** |
+| **Statistical test** | A method used to decide whether a difference or relationship in the sample is likely to be real or could just be due to random chance. usually starting with a null hypothesis (`H0`). used when we want to determine whether an observed difference/association in a sample provides sufficient evidence of a corresponding effect in the population, while accounting for sampling variability. Ch. 4, 4.3 *Hypothesis testing*, p. **212-214** |
 
 ### When to Use a Statistical Test
 
