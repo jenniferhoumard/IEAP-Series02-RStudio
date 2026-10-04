@@ -59,7 +59,7 @@ Snorers had higher alcohol consumption than non-snorers, with median values of 4
 
 **Do snorers smoke more?**
 
-Alcohol consumption of smokers and non-smokers can be compared to determine whether smokers have higher alcohol consumption. Analyze the proportion of smokers between snorers and non-snorers and since smoking and alcohol is categorical (`O`/`N`) data, therefore a histogram was plotted rather than a box-pot.
+The proportion of smokers is compared between snorers and non-snorers. Since smoking status is categorical (O/N), a bar plot was used rather than a boxplot.
 
 $Smoker_{non-snorer}$ vs $Smoker_{snorer}$
 
