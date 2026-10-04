@@ -2,17 +2,17 @@
 
 This checklist was used during the pull request review process and again during the final review of the complete assignment. It helped us check that each section met the required criteria before merging and that all submission requirements were completed before the final PDF was submitted.
 
-- [ ] Authors and date are included in the header
-- [ ] Public GitHub repository is linked
-- [ ] Team Git workflow strategy is explained
-- [ ] Challenges encountered and lessons learned are discussed
-- [ ] Complete code and answers to all statistical-test questions are included
-- [ ] Data sources are provided with URLs
-- [ ] Scientific references are provided with DOIs where available
-- [ ] README.md is complete
-- [ ] LICENSE is included
-- [ ] Git history contains meaningful commit messages
-- [ ] At least one commit was made per question
-- [ ] Branches were used appropriately
-- [ ] Main branch is up to date
-- [ ] Final PDF renders correctly
+- [x] Authors and date are included in the header
+- [x] Public GitHub repository is linked
+- [x] Team Git workflow strategy is explained
+- [x] Challenges encountered and lessons learned are discussed
+- [x] Complete code and answers to all statistical-test questions are included
+- [x] Data sources are provided with URLs
+- [x] Scientific references are provided with DOIs where available
+- [x] README.md is complete
+- [x] LICENSE is included
+- [x] Git history contains meaningful commit messages
+- [x] At least one commit was made per question
+- [x] Branches were used appropriately
+- [x] Main branch is up to date
+- [x] Final PDF renders correctly

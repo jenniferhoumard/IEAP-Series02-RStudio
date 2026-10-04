@@ -41,9 +41,9 @@ shapiro.test(snore$alcool[snore$snore == "O"])
 
 Alcohol consumption was not normally distributed in either snorers or non-snorers (Shapiro–Wilk tests, both p \< 0.05). Therefore, a non-parametric test was used to compare the two unpaired/independent groups.
 
-$Alcohol_{snoreres}$ $\rightarrow$ $p = 6.818e-09 < 0.05$
+$Alcohol_{non-snorers}$ $\rightarrow$ $p = 6.818e-09 < 0.05$
 
-$Alcohol_{non-snoreres}$ $\rightarrow$ $p = 0.005032 < 0.05$
+$Alcohol_{snorers}$ $\rightarrow$ $p = 0.005032 < 0.05$
 
 ```{r}
 # 4. Run the Wilcoxon rank-sum test on alcohol consumption
@@ -59,7 +59,7 @@ Snorers had higher alcohol consumption than non-snorers, with median values of 4
 
 **Do snorers smoke more?**
 
-Alcohol consumption of smokers and non-smokers can be compared to determine whether smokers have higher alcohol consumption. Analyze the proportion of smokers between snorers and non-snorers and since smoking and alcohol is categorical (`O`/`N`) data, therefore a histogram was plotted rather than a box-pot.
+The proportion of smokers is compared between snorers and non-snorers. Since smoking status is categorical (O/N), a bar plot was used rather than a boxplot.
 
 $Smoker_{non-snorer}$ vs $Smoker_{snorer}$
 

@@ -8,8 +8,6 @@ The `snore` dataset contains information about participants including their heig
 
 ```{r}
 
-library(tidyverse)
-
 # 1.Import the data
 
 snore <- read_delim("data/snore copy.csv") # delim seperates the columns correctly 
@@ -78,7 +76,7 @@ shapiro.test(snore$BMI[snore$snore == "O"]) # take the BMI column only for the r
 
 BMI is not normally distributed in either group. Both are much smaller than (0.05), so we reject the assumption of normality for both groups:
 
-- $BMI_{snoreres}$ $\rightarrow$ $p = 2.323e-08 < 0.05$
+- $BMI_{snoreres}$ $\rightarrow$ $p = 9.81e-07 < 0.05$
 
 - $BMI_{non-snoreres}$ $\rightarrow$ $p = 2.323e9.81-07 < 0.05$
 
